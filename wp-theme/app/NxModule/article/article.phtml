@@ -1,0 +1,62 @@
+<? if($data->thumbnail_id !== '' && class_exists('Picture')):
+
+	$settings = array(
+    	'selector' => '#article-'.$data->post_id,
+     	'sizes' => array('article_small', 'article_medium', 'article_large')
+    );
+
+	echo Picture::create( 'style', $data->thumbnail_id, $settings);
+?>
+	<div id="article-<?= $data->post_id ?>" class="hd has-image">
+		<div class="overlay">
+			<div class="title-box">
+				<? if (is_page() == false): ?>
+				<span class="date"><?= $data->date ?></span>
+				<? endif; ?>
+				<h1 class="article-title"><?= $data->title ?></h1>
+			</div>
+		</div>
+	</div>
+<? 	else: ?>
+	<div class="hd no-image">
+		<div class="title-box">
+			<? if (is_page() == false): ?>
+				<span class="date"><?= $data->date ?></span>
+			<? endif; ?>
+			<h1 class="article-title"><?= $data->title ?></h1>
+		</div>
+	</div>
+<? endif; ?>
+
+
+<div class="bd box-content">
+
+	<? if (is_page() == false): ?>
+	<div class="article-meta">
+		<a class="author-link" href="<?= $data->author_page_url ?>">
+			<?= $data->author_avatar ?>
+			<span class="name"><?= $data->author_display_name ?></span>
+		</a>
+		<span class="categories">
+			<?= $data->category_link_list ?>
+		</span>
+	</div>
+	<? endif; ?>
+
+	<div class="article-content">
+		<?php if (has_excerpt() ): ?>
+			<h2 class="excerpt"><?= $data->excerpt ?></h2>
+		<? endif; ?>
+
+		<?= $data->content ?>
+	</div>
+
+	<? if (is_page() == false && $data->tags): ?>
+		<ul class="tags">
+		<? foreach ($data->tags as $tag) : ?>
+			<li class="tag"><a href="<?= get_tag_link($tag->term_id) ?>" class="tag-small"><?= $tag->name ?></a></li>
+		<? endforeach; ?>
+		</ul>
+	<? endif; ?>
+
+</div>

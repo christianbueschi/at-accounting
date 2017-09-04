@@ -1,0 +1,34 @@
+<div class="hd">
+	<div class="page-centered box-content">
+		<div class="g-layout-header g-row">
+
+			<div class="g-col g-col-left">
+				<a href="<?= home_url() ?>">
+					<img class="logo" width="260" src="http://dummyimage.com/520x200" alt="<? bloginfo('name'); ?>" />
+				</a>
+			</div>
+			<div class="g-col g-col-middle">
+				<span class="tagline"><?= get_bloginfo('name') ?></span>
+			</div>
+			<div class="g-col g-col-right">
+				<?
+				if($data->menu_lang !== false):
+					foreach ($data->menu_lang['items'] as $item) :
+						if(in_array('current', $item->classes) === false): 	?>
+							<a class="lang" href="<?= $item->url ?>"><?= $item->post_title ?></a>
+						<? 	endif;
+					endforeach;
+				endif;
+				?>
+				<a href="#search" class="toggle icon icon-search js-toggle-search <?= (is_search()) ? 'active' : '' ?>"></a>
+			</div>
+		</div>
+	</div>
+	<?= get_search_form() ?>
+</div>
+
+<div class="bd">
+	<div class="page-centered">
+		<?= module('category-nav') ?>
+	</div>
+</div>
