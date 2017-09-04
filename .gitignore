@@ -1,9 +1,6 @@
+
 /.idea
-/.DS_Store
-
 /wp-theme/node_modules
-
+/wp-theme/_static/build/*
 /web
-
 **/.DS_Store
-_static/build/*
