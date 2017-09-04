@@ -1,13 +1,15 @@
 // Load plugins
-var gulp = require('gulp'),
-	sass = require('gulp-sass'),
-	autoprefixer = require('gulp-autoprefixer'),
-	minifycss = require('gulp-minify-css'),
-	rename = require('gulp-rename'),
-	concat = require('gulp-concat'),
-	uglify = require('gulp-uglify'),
-	appDefaults = {
-		stylesInputDir : "app/",
+var gulp 			= require('gulp'),
+	sass 			= require('gulp-sass'),
+	autoprefixer 	= require('gulp-autoprefixer'),
+	minifycss 		= require('gulp-minify-css'),
+	rename 			= require('gulp-rename'),
+	concat 			= require('gulp-concat'),
+	uglify 			= require('gulp-uglify'),
+    bourbon    		= require("bourbon").includePaths,
+    neat       		= require("bourbon-neat").includePaths,
+	appDefaults 	= {
+		stylesInputDir : "app/frontend/",
 		stylesOutputDir : "_static/build/",
         scriptsInputDir : "app/",
         scriptsOutputDir : "_static/build/"
@@ -16,10 +18,12 @@ var gulp = require('gulp'),
 
 // Styles
 gulp.task('styles', function() {
-	return gulp.src(appDefaults.stylesInputDir + '**/*.scss')
-		.pipe(sass({ style: 'compressed'  }))
+	return gulp.src(appDefaults.stylesInputDir + "/styles.scss")
+		.pipe(sass({
+			style: 'compressed',
+            includePaths: [bourbon, neat]
+		}))
 		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-		.pipe(concat('styles.css'))
 		.pipe(gulp.dest(appDefaults.stylesOutputDir))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(minifycss())
