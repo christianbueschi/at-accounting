@@ -8,6 +8,7 @@ var gulp 			= require('gulp'),
 	uglify 			= require('gulp-uglify'),
     bourbon    		= require("bourbon").includePaths,
     neat       		= require("bourbon-neat").includePaths,
+	livereload 	 	= require('gulp-livereload'),
 	appDefaults 	= {
 		stylesInputDir : "app/frontend/",
 		stylesOutputDir : "_static/build/",
@@ -27,7 +28,8 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest(appDefaults.stylesOutputDir))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(minifycss())
-		.pipe(gulp.dest(appDefaults.stylesOutputDir));
+		.pipe(gulp.dest(appDefaults.stylesOutputDir))
+		.pipe(livereload());
 });
 
 // Scripts
@@ -37,12 +39,15 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest(appDefaults.stylesOutputDir))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
-        .pipe(gulp.dest(appDefaults.stylesOutputDir));
+        .pipe(gulp.dest(appDefaults.stylesOutputDir))
+		.pipe(livereload());
 });
 
 
 // Watch
 gulp.task('watch', function() {
+
+	livereload.listen();
 
 	// Watch .scss files
 	gulp.watch(appDefaults.stylesInputDir+'**/*.scss', function(event) {
@@ -53,7 +58,7 @@ gulp.task('watch', function() {
     // Watch .jsfiles
     gulp.watch(appDefaults.scriptsInputDir + '**/*.js', function(event) {
         console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-        gulp.run('styles');
+        gulp.run('scripts');
     });
 
 });

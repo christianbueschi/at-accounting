@@ -1,0 +1,17 @@
+<?php
+
+if ($data->topfeatures): ?>
+
+	<?php foreach ($data->topfeatures as $topfeature): ?>
+
+		<?= module('topfeature')
+			->tag('li')
+			->ctrl(array('topfeature' => $topfeature));
+
+
+	endforeach;
+
+
+endif; ?>
+
+

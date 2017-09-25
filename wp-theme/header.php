@@ -30,28 +30,9 @@
 		<!-- Open Graph !-->
 		<?= partial('opengraph') ?>
 
-		<!--[if lte IE 8]>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
-		<![endif]-->
-
-		<!--[if lte IE 9]>
-		<script src="<?=ASSETS_URL?>/js/matchMedia.js"></script>
-		<script src="<?=ASSETS_URL?>/js/matchMedia.addListener.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
 	</head>
 
 	<body <?php body_class(); ?>>
-
-		<ul class="skip-links h-vh">
-			<li>
-				<a href="#site-navigation"><? _e( 'Skip to main navigation', 'nxtheme' ); ?></a>
-			</li>
-			<li>
-				<a href="#content"><? _e( 'Skip to content', 'nxtheme' ); ?></a>
-			</li>
-		</ul>
 
 		<?= module('header')
 			->tag('header')

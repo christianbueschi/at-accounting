@@ -1,8 +1,8 @@
 <?php
 
-namespace NxModule\commentlist;
+namespace NxModule\topfeature;
 
-class CommentlistCtrl {
+class TopfeatureCtrl {
 
 	/**
 	 * Define default args for the controller
@@ -18,7 +18,8 @@ class CommentlistCtrl {
 	 * @var array
 	 */
 	protected static $DEFAULT_VIEW_VARS = array(
-		'comments' => ''
+		'post_id' => '',
+		'title' => ''
 	);
 
 	/**
@@ -34,11 +35,9 @@ class CommentlistCtrl {
 		// Set default vars for the view
 		$viewData = self::$DEFAULT_VIEW_VARS;
 
-		$viewData['comments'] = get_comments(array(
-			'post_id' => get_the_ID(),
-			'status' => 'approve',
-			'order' => get_option('comment_order')
-		));
+		$topfeature = $ctrlArgs['topfeature'];
+		$viewData['id'] = $topfeature->ID;
+		$viewData['title'] = $topfeature->post_title;
 
 		return $viewData;
 	}
