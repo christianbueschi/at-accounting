@@ -4,11 +4,12 @@
 
 
 // Fonts
-$font-path              : '';
-$ionicons-font-path     : '';
+$font-path              : '../fonts';
+$iconfont-path          : '../fonts';
 
-$font-family            : 'Open Sans';
-$icon-font-family       : 'Ionicons';
+$icon-font-family       : 'sdx-icons';
+$font-family            : 'The Sans B2';
+$font-family-serif      : 'TheSerif';
 
 
 $font-weight-light      : 300;
@@ -18,6 +19,66 @@ $font-weight-bold       : bolder;
 
 ////////////////////////////////////////////////////////////
 
+// Header
+
+$header-height-s:               80px;
+$header-height-l:               110px;
+
+////////////////////////////////////////////////////////////
+
+// Brand Colors
+
+$sc-navy:						#001155;
+$sc-blue:						#11AAFF;
+$sc-red:						#DD1122;
+$sc-purple:						#551166;
+$sc-dark-grey:					#333333;
+$sc-mid-grey:					#666666;
+$sc-light-grey:					#BBBBBB;
+
+// SDX colors
+$grey:							$sc-dark-grey;
+$grey-90:						#474747;
+$grey-80:						#5C5C5C;
+$grey-60:						#858585;
+$grey-40:						#ADADAD;
+$grey-20:						#D6D6D6;
+$blue-interaction:				#1781E3;
+$blue-interaction-40:			#A2CDF4;
+$blue-interaction-20:			#D1E6F9;
+$aluminium:						#DDE3E7;
+$aluminium-80:					#E4E9EC;
+$horizon:						#EEF3F6;
+$horizon-40:					#F8FAFB;
+
+
+//Interaction Colors
+$blue-rollover:                 #0851DA;
+$grey-interaction:				#CFD5D9;
+$grey-rollover:					#B1B9BE;
+$green-interaction: 			#25b252;
+$green-rollover:				#008236;
+$red-interaction: 				$sc-red;
+$red-rollover: 					#BE0000;
+$orange-interaction:            #FF8B2E;
+$orange-rollover:	            #E86416;
+
+//Content Colors
+$orchid: 						#A63297;
+$orchid-rollover:				#7F2879;
+$iris:							#5944C6;
+$iris-rollover:					#42389E;
+$pink:							#E61E64;
+$pink-rollover:					#BF1B5A;
+$turquoise:						#0EABA9;
+$turquoise-rollover:			#0C847E;
+$apple:							#91BA2F;
+$apple-rollover:				#759126;
+$petrol:						#19657A;
+$petrol-rollover:				#114551;
+
+
+////////////////////////////////////////////////////////////
 
 // Grid
 $gutter: 25px;
@@ -25,8 +86,7 @@ $grid-columns: 12;
 $max-width: 1440px;
 
 // Spacings
-$spacing-s	    : 1rem;
-$spacing-l	    : 2rem;
+$spacing	    : 1rem;
 
 ////////////////////////////////////////////////////////////
 

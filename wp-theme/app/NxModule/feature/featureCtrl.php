@@ -1,8 +1,8 @@
 <?php
 
-namespace NxModule\topfeature;
+namespace NxModule\feature;
 
-class TopfeatureCtrl {
+class FeatureCtrl {
 
 	/**
 	 * Define default args for the controller
@@ -36,14 +36,13 @@ class TopfeatureCtrl {
 		// Set default vars for the view
 		$viewData = self::$DEFAULT_VIEW_VARS;
 
-		$topfeature = $ctrlArgs['topfeature'];
+		$feature = $ctrlArgs['feature'];
 
-		$id = $topfeature->ID;
-		$viewData['title'] = $topfeature->post_title;
-		$viewData['description'] = get_field('topfeature_description', $id);
-		$viewData['image'] = get_field('topfeature_image', $id);
-		$viewData['cta'] = get_field('topfeature_cta', $id);
-		$viewData['cta_link'] = get_field('topfeature_cta_link', $id);
+		$id = $feature->ID;
+		$viewData['title'] = $feature->post_title;
+		$viewData['icon'] = get_field('feature_icon_class', $id);
+		$viewData['cta_link'] = get_field('feature_cta_link', $id);
+		$viewData['color'] = get_field('feature_color', $id);
 
 		return $viewData;
 	}

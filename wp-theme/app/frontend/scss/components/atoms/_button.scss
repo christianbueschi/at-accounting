@@ -1,0 +1,41 @@
+.a-button {
+	
+	@include type-setting(-2);
+	background-color: $blue-interaction;
+	border: none;
+	text-align: center;
+	color: white;
+	min-width: 120px;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 5px;
+	
+	-webkit-appearance: none;
+	
+	line-height: 40px;
+	
+	@include media($medium-up) {
+		line-height: 48px;
+		min-width: 160px;
+	}
+	
+	
+	&:hover {
+		cursor: pointer;
+		outline: none;
+		background-color: $blue-rollover;
+	}
+	
+	&--outline {
+		background-color: transparent;
+		border: 1px solid white;
+		
+		&:hover {
+			cursor: pointer;
+			outline: none;
+			border-color: $grey-40;
+		}
+	}
+
+
+}

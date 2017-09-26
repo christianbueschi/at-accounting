@@ -10,9 +10,9 @@ var gulp 			= require('gulp'),
     neat       		= require("bourbon-neat").includePaths,
 	livereload 	 	= require('gulp-livereload'),
 	appDefaults 	= {
-		stylesInputDir : "app/frontend/",
+		stylesInputDir : "app/frontend",
 		stylesOutputDir : "_static/build/",
-        scriptsInputDir : "app/",
+        scriptsInputDir : "app/js",
         scriptsOutputDir : "_static/build/"
 	};
 
@@ -34,7 +34,7 @@ gulp.task('styles', function() {
 
 // Scripts
 gulp.task('scripts', function() {
-    return gulp.src(appDefaults.scriptsInputDir + '**/*.js')
+    return gulp.src(appDefaults.scriptsInputDir + '/js/**/*.js')
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest(appDefaults.stylesOutputDir))
         .pipe(rename({ suffix: '.min' }))
@@ -50,7 +50,7 @@ gulp.task('watch', function() {
 	livereload.listen();
 
 	// Watch .scss files
-	gulp.watch(appDefaults.stylesInputDir+'**/*.scss', function(event) {
+	gulp.watch(appDefaults.stylesInputDir+'/scss/**/*.scss', function(event) {
 		console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 		gulp.run('styles');
 	});

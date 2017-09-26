@@ -189,7 +189,7 @@ class TerrificModule {
 		$data = $this->data;
 
 		// Classes
-		$classes = array('mod', sprintf("mod-%s", $this->name));
+		$classes = array(sprintf("o-%s", $this->name));
 
 		// Skin Classes
 		foreach ($this->skins as $skin) {

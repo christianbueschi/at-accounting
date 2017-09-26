@@ -44,11 +44,13 @@ class stageCtrl {
 		// View Data
 		$viewData['post_id'] = get_the_ID();
 		$viewData['title'] = get_the_title(get_the_ID());
+		$viewData['content'] = get_the_content(get_the_ID());
 		$viewData['subheading'] = get_field('stage_landing_subheading');
 		$viewData['tagline'] = get_field('stage_landing_tagline');
 		$viewData['cta'] = get_field('stage_landing_cta');
 		$viewData['cta_link'] = get_field('stage_landing_cta_link');
 		$viewData['background_image'] = get_field('stage_landing_background_image');
+		$viewData['product_image'] = get_field('stage_landing_product_image');
 
 		return $viewData;
 	}

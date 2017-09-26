@@ -1,11 +1,23 @@
-<div style="background-image: url(<?= $data->background_image['url']; ?>)">
+<div class="o-stage__inner" style="background-image: url(<?= $data->background_image['url']; ?>)">
 
-	<h1><?= $data->title; ?></h1>
+	<h1 class="o-stage__title"><?= $data->title; ?></h1>
 
-	<h2><?= $data->subheading; ?></h2>
+	<h2 class="o-stage__subheading"><?= $data->subheading; ?></h2>
 
-	<p><?= $data->tagline; ?></p>
+	<img class="o-stage__image" src="<?= $data->product_image['url']; ?>" alt="">
 
-	<a href="<?= $data->cta_link; ?>"><?= $data->cta; ?></a>
+</div>
 
+<div class="o-stage__cta">
+	<p class="o-stage__cta__tagline"><?= $data->tagline; ?></p>
+	<div class="o-stage__cta__button__outer">
+		<a class="o-stage__cta__button a-button a-button--outline" href="<?= $data->cta_link; ?>"><?= $data->cta; ?></a>
+
+	</div>
+</div>
+
+<div class="o-info">
+	<p class="o-info__copy">
+		<?= $data->content; ?>
+	</p>
 </div>

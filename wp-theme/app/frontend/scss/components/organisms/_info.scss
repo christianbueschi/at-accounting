@@ -1,0 +1,24 @@
+.o-info {
+	
+	padding: $spacing*4 $spacing*2;
+	
+	&__copy {
+		@include type-setting(-1);
+		text-align: center;
+		
+		em {
+			@include type-setting(-2);
+			display: block;
+			font-style: italic;
+			margin-top: $spacing;
+			
+			&:after {
+				font-family: $icon-font-family;
+				content: "\e0c3";
+				color: $sc-red;
+				font-style: normal;
+				padding-left: $spacing;
+			}
+		}
+	}
+}

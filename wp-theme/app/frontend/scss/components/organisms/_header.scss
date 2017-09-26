@@ -1,0 +1,39 @@
+.o-header {
+	
+	position: absolute;
+	width: 100%;
+	height: $header-height-s;
+	z-index: 1;
+	
+	@include media($medium-up) {
+		height: 110px;
+	}
+	
+	&__inner {
+		@include outer-container();
+		padding: $spacing*2;
+	}
+	
+	&__brand {
+		display: inline-block;
+		margin-top: 8px;
+	}
+	
+	&__controls {
+		float: right;
+		
+		&__item {
+			float: left;
+			margin-left: $spacing;
+			
+			
+			> .icon {
+				color: white;
+				@include type-setting(0);
+				padding: 0;
+				margin: 0;
+			}
+		}
+	}
+	
+}

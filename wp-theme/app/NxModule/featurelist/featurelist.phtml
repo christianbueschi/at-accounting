@@ -1,0 +1,17 @@
+<?php
+
+if ($data->features): ?>
+
+	<?php foreach ($data->features as $feature): ?>
+
+		<?= module('feature')
+			->tag('li')
+			->ctrl(array('feature' => $feature));
+
+
+	endforeach;
+
+
+endif; ?>
+
+

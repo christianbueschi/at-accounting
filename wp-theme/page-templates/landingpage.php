@@ -15,9 +15,13 @@ get_header();
 		->tag('section')
 		->ctrl(); ?>
 
-
 	<?=
 	module('topfeaturelist')
+		->tag('ul')
+		->ctrl(); ?>
+
+	<?=
+	module('featurelist')
 		->tag('ul')
 		->ctrl(); ?>
 

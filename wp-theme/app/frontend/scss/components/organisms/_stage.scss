@@ -1,0 +1,65 @@
+.o-stage {
+	
+	&__inner {
+		background-size: cover;
+		background-position: center center;
+		position: relative; // image relative
+		
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-image: radial-gradient(ellipse at 53% 53%, rgba(102,102,102,0.5) 50%, rgba(0,0,0,0.9) 100%);
+		}
+	}
+	
+	&__title {
+		@include type-setting(-1);
+		color: white;
+		position: relative;
+		padding: $header-height-s $spacing*2 0 $spacing*2;
+	}
+	
+	&__subheading {
+		@include type-setting(-2);
+		font-family: $font-family-serif;
+		font-weight: 600;
+		color: $sc-blue;
+		position: relative;
+		padding: 0 $spacing*2;
+	}
+	
+	&__image {
+		display: block;
+		margin: 0 auto;
+		width: 250px;
+		z-index: 1;
+		position: relative;
+		margin-top: 20px;
+		margin-bottom: -20px;
+	}
+	
+	&__cta {
+		overflow: hidden;
+		padding: $spacing*5 $spacing*2 $spacing*2;
+		background-color: $grey;
+		position: relative;
+		
+		&__tagline {
+			@include type-setting(-2);
+			color: white;
+			@include span-columns(7);
+		}
+		
+		&__button {
+			
+			&__outer {
+				@include span-columns(5);
+				text-align: center;
+			}
+		}
+	}
+}

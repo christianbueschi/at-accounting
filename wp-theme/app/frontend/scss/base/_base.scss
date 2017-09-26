@@ -1,3 +1,8 @@
 body, html {
-	font-family: "The Sans B2";
+	font-family: $font-family;
+	color: $sc-mid-grey;
+}
+
+img {
+	max-width: 100%;
 }
