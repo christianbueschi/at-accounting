@@ -19,16 +19,22 @@
 
 
 // Atoms
+@import "scss/components/atoms/input";
 @import "scss/components/atoms/logo";
 @import "scss/components/atoms/button";
 
 
 // Organisms
-@import "scss/components/organisms/header";
-@import "scss/components/organisms/stage";
+@import "scss/components/organisms/footer";
 @import "scss/components/organisms/info";
-@import "scss/components/organisms/topfeature";
+@import "scss/components/organisms/header";
+@import "scss/components/organisms/license-calculator";
+@import "scss/components/organisms/platform";
 @import "scss/components/organisms/feature";
+@import "scss/components/organisms/featurelist";
+@import "scss/components/organisms/team";
+@import "scss/components/organisms/topfeature";
+@import "scss/components/organisms/stage";
 //@import "scss/components/molecules/";
 //@import "scss/components/organisms/";
 

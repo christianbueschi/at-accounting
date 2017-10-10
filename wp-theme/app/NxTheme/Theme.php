@@ -172,8 +172,7 @@ class Theme {
 
 		register_nav_menus(array(
 			'lang' => __('Lang Menu', 'nxtheme'),
-			'footer-one' => __('Footer One Menu', 'nxtheme'),
-			'footer-two' => __('Footer Two Menu', 'nxtheme'),
+			'footer-links' => __('Footer Links', 'nxtheme'),
 			'footer-social' => __('Footer Social Menu', 'nxtheme')
 		));
 	}

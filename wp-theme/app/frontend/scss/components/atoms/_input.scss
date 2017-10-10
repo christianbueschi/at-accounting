@@ -1,0 +1,20 @@
+.a-input {
+	
+	@include type-setting(-2);
+	background-color: white;
+	color: $grey;
+	border-radius: 5px;
+	padding: 0 $spacing;
+	border: 1px solid white;
+	
+	-webkit-appearance: none;
+	
+	line-height: 42px;
+	height: 42px;
+	
+	@include media($medium-up) {
+		line-height: 48px;
+		min-width: 160px;
+	}
+	
+}

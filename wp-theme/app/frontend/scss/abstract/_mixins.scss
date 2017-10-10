@@ -1,0 +1,13 @@
+@mixin background-light() {
+	background-image: radial-gradient(ellipse at 7% 90%, #FFFFFF 0%, #F8FAFB 86%);
+}
+
+@mixin background-dark() {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: radial-gradient(ellipse at 53% 53%, rgba(102,102,102,0.5) 50%, rgba(0,0,0,0.9) 100%);
+}

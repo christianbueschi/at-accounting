@@ -1,6 +1,11 @@
 .o-info {
 	
 	padding: $spacing*4 $spacing*2;
+	@include background-light();
+	
+	@include media($medium-up) {
+		padding-top: $spacing * 6;
+	}
 	
 	&__copy {
 		@include type-setting(-1);

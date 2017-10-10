@@ -1,0 +1,42 @@
+.o-platform {
+	
+	&__inner {
+		background-size: cover;
+		background-position: center center;
+		padding: 2rem;
+		position: relative; // image relative
+		
+		&:before {
+			@include background-dark();
+		}
+	}
+	
+	&__title {
+		@include type-setting(0);
+		text-align: center;
+		color: white;
+		margin-bottom: $spacing*2;
+		position: relative;
+	}
+	
+	&__text {
+		@include type-setting(-1);
+		text-align: center;
+		color: white;
+		margin-bottom: $spacing * 2;
+		position: relative;
+	}
+	
+	&__logos {
+		overflow: hidden;
+		position: relative;
+	}
+	
+	&__logo {
+		@include span-columns(4);
+		
+		> img {
+		
+		}
+	}
+}

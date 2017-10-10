@@ -1,17 +1,19 @@
-<?php
 
-if ($data->features): ?>
 
-	<?php foreach ($data->features as $feature): ?>
+<h2 class="o-featurelist__title"><?= get_sub_field('features_title') ?></h2>
+
+<?php if (have_rows('features_item')): ?>
+
+	<?php while (have_rows('features_item')) : the_row() ?>
 
 		<?= module('feature')
 			->tag('li')
-			->ctrl(array('feature' => $feature));
+			->ctrl(); ?>
 
 
-	endforeach;
+	<?php endwhile; ?>
 
 
-endif; ?>
+<?php endif; ?>
 
 

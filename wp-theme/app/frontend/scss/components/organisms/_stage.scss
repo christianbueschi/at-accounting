@@ -1,18 +1,18 @@
 .o-stage {
 	
+	position: relative;
+	
 	&__inner {
 		background-size: cover;
 		background-position: center center;
 		position: relative; // image relative
 		
 		&:before {
-			content: '';
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			background-image: radial-gradient(ellipse at 53% 53%, rgba(102,102,102,0.5) 50%, rgba(0,0,0,0.9) 100%);
+			@include background-dark();
+		}
+		
+		@include media($medium-up) {
+			text-align: center;
 		}
 	}
 	
@@ -21,6 +21,16 @@
 		color: white;
 		position: relative;
 		padding: $header-height-s $spacing*2 0 $spacing*2;
+		
+		@include media($medium-up) {
+			@include type-setting(0);
+		}
+		
+		&__outer {
+			@include media($medium-up) {
+				display: inline-block;
+			}
+		}
 	}
 	
 	&__subheading {
@@ -30,6 +40,10 @@
 		color: $sc-blue;
 		position: relative;
 		padding: 0 $spacing*2;
+		
+		@include media($medium-up) {
+			text-align: left;
+		}
 	}
 	
 	&__image {
@@ -39,7 +53,14 @@
 		z-index: 1;
 		position: relative;
 		margin-top: 20px;
-		margin-bottom: -20px;
+		margin-bottom: -45px;
+		
+		@include media($medium-up) {
+			padding-left: $spacing * 2;
+			margin: 0;
+			width: calc(50%);
+			transform: translateY(25%);
+		}
 	}
 	
 	&__cta {
@@ -48,10 +69,23 @@
 		background-color: $grey;
 		position: relative;
 		
+		@include media($medium-up) {
+			background-color: transparent;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 50%;
+		}
+		
 		&__tagline {
 			@include type-setting(-2);
 			color: white;
 			@include span-columns(7);
+			
+			@include media($medium-up) {
+				@include span-columns(12);
+				margin-bottom: $spacing;
+			}
 		}
 		
 		&__button {
@@ -59,7 +93,13 @@
 			&__outer {
 				@include span-columns(5);
 				text-align: center;
+				
+				@include media($medium-up) {
+					@include span-columns(12);
+					text-align: left;
+				}
 			}
 		}
+		
 	}
 }

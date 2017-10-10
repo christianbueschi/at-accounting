@@ -36,14 +36,11 @@ class TopfeatureCtrl {
 		// Set default vars for the view
 		$viewData = self::$DEFAULT_VIEW_VARS;
 
-		$topfeature = $ctrlArgs['topfeature'];
-
-		$id = $topfeature->ID;
-		$viewData['title'] = $topfeature->post_title;
-		$viewData['description'] = get_field('topfeature_description', $id);
-		$viewData['image'] = get_field('topfeature_image', $id);
-		$viewData['cta'] = get_field('topfeature_cta', $id);
-		$viewData['cta_link'] = get_field('topfeature_cta_link', $id);
+		$viewData['title'] = get_sub_field('topfeature_title');
+		$viewData['description'] = get_sub_field('topfeature_description');
+		$viewData['image'] = get_sub_field('topfeature_image');
+		$viewData['cta'] = get_sub_field('topfeature_cta');
+		$viewData['cta_link'] = get_sub_field('topfeature_cta_link');
 
 		return $viewData;
 	}

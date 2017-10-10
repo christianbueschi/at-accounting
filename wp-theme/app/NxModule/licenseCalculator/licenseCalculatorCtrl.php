@@ -1,8 +1,8 @@
 <?php
 
-namespace NxModule\stage;
+namespace NxModule\licenseCalculator;
 
-class stageCtrl {
+class licenseCalculatorCtrl {
 
 	/**
 	 * Define default args for the controller
@@ -20,10 +20,7 @@ class stageCtrl {
 	protected static $DEFAULT_VIEW_VARS = array(
 		'post_id' => '',
 		'title' => '',
-		'subheading' => '',
-		'tagline' => '',
-		'cta' => '',
-		'cta_link' => '',
+		'text' => '',
 		'background_image' => ''
 	);
 
@@ -41,15 +38,13 @@ class stageCtrl {
 		// Set default vars for the view
 		$viewData = self::$DEFAULT_VIEW_VARS;
 
-		// View Data
-		$viewData['post_id'] = get_the_ID();
-		$viewData['title'] = get_the_title();
-		$viewData['subheading'] = get_sub_field('stage_landing_subheading');
-		$viewData['tagline'] = get_sub_field('stage_landing_tagline');
-		$viewData['cta'] = get_sub_field('stage_landing_cta');
-		$viewData['cta_link'] = get_sub_field('stage_landing_cta_link');
-		$viewData['background_image'] = get_sub_field('stage_landing_background_image');
-		$viewData['product_image'] = get_sub_field('stage_landing_product_image');
+		// View Data;
+		$viewData['title'] = get_sub_field('license_calculator_title');
+		$viewData['text'] = get_sub_field('license_calculator_text');
+		$viewData['cta_contact'] = get_sub_field('license_calculator_cta_contact');
+		$viewData['cta_contact_link'] = get_sub_field('license_calculator_cta_contact_link');
+		$viewData['cta_try'] = get_sub_field('license_calculator_cta_try');
+		$viewData['cta_try_link'] = get_sub_field('license_calculator_try_link');
 
 		return $viewData;
 	}

@@ -1,8 +1,8 @@
 <?php
 
-namespace NxModule\feature;
+namespace NxModule\team;
 
-class FeatureCtrl {
+class TeamCtrl {
 
 	/**
 	 * Define default args for the controller
@@ -36,10 +36,8 @@ class FeatureCtrl {
 		// Set default vars for the view
 		$viewData = self::$DEFAULT_VIEW_VARS;
 
-		$viewData['title'] = get_sub_field('feature_title');
-		$viewData['icon'] = get_sub_field('feature_icon_class');
-		$viewData['cta_link'] = get_sub_field('feature_cta_link');
-		$viewData['color'] = get_sub_field('feature_color');
+		$viewData['title'] = get_sub_field('team_title');
+		$viewData['info'] = get_sub_field('team_info');
 
 		return $viewData;
 	}

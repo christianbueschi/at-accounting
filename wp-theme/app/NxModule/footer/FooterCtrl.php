@@ -18,10 +18,9 @@ class FooterCtrl {
 	 * @var array
 	 */
 	protected static $DEFAULT_VIEW_VARS = array(
-		'menu_one' => '',
-		'menu_two' => '',
+		'menu_links' => '',
 		'menu_social' => '',
-		'menu_about' => '',
+		'address' => ''
 	);
 
 	/**
@@ -37,10 +36,18 @@ class FooterCtrl {
 		// Set default vars for the view
 		$viewData = self::$DEFAULT_VIEW_VARS;
 
+		$viewData['address'] = get_field('imprint_content', 'options');
+
+		$backgroundImage = get_field('footer_image', 'options');
+		$viewData['background_image'] = $backgroundImage['url'];
+
+		$brandImage = get_field('brand_image', 'options');
+		$viewData['brand_image'] = $brandImage['url'];
+		$viewData['brand_link'] = get_field('brand_image_link', 'options');
+
 		// Define menu locations
 		$map_menu_locations = array(
-			'menu_one' => 'footer-one',
-			'menu_two' => 'footer-two',
+			'menu_links' => 'footer-links',
 			'menu_social' => 'footer-social'
 		);
 

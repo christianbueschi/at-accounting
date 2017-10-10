@@ -1,8 +1,8 @@
 <?php
 
-namespace NxModule\feature;
+namespace NxModule\platform;
 
-class FeatureCtrl {
+class platformCtrl {
 
 	/**
 	 * Define default args for the controller
@@ -19,12 +19,15 @@ class FeatureCtrl {
 	 */
 	protected static $DEFAULT_VIEW_VARS = array(
 		'post_id' => '',
-		'title' => ''
+		'title' => '',
+		'text' => '',
+		'background_image' => ''
 	);
 
 	/**
-	 * * Get Teaser Query
-	 * @param array $args
+	 * Get data for an article
+	 *
+	 * @param $args
 	 * @return array
 	 */
 	public static function data(array $args = array()) {
@@ -32,14 +35,13 @@ class FeatureCtrl {
 		// Extend default args
 		$ctrlArgs = array_merge(self::$DEFAULT_CTRL_ARGS, $args);
 
-
 		// Set default vars for the view
 		$viewData = self::$DEFAULT_VIEW_VARS;
 
-		$viewData['title'] = get_sub_field('feature_title');
-		$viewData['icon'] = get_sub_field('feature_icon_class');
-		$viewData['cta_link'] = get_sub_field('feature_cta_link');
-		$viewData['color'] = get_sub_field('feature_color');
+		// View Data;
+		$viewData['title'] = get_sub_field('platform_title');
+		$viewData['text'] = get_sub_field('platform_text');
+		$viewData['background_image'] = get_sub_field('platform_background_image');
 
 		return $viewData;
 	}

@@ -1,6 +1,12 @@
 <div class="o-topfeature__inner">
 	<h2 class="o-topfeature__title"><?= $data->title ?></h2>
-	<img class="o-topfeature__image" src="<?= $data->image['url'] ?>" alt="">
-	<p class="o-topfeature__description"><?= $data->description ?></p>
-	<a class="o-topfeature__button a-button" href="<?= $data->cta_link ?>"><?= $data->cta ?></a>
+	<div class="o-topfeature__grid">
+		<div class="o-topfeature__image__outer">
+			<img class="o-topfeature__image" src="<?= $data->image['url'] ?>" alt="">
+		</div>
+		<div class="o-topfeature__description__outer">
+			<p class="o-topfeature__description"><?= $data->description ?></p>
+			<a class="o-topfeature__button a-button" href="<?= $data->cta_link ?>"><?= $data->cta ?></a>
+		</div>
+	</div>
 </div>

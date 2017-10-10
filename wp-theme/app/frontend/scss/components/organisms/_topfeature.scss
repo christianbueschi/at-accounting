@@ -1,6 +1,21 @@
 .o-topfeature {
 	
+	overflow: hidden;
 	padding: $spacing*2;
+	@include background-light();
+	
+	@include media($medium-up) {
+		padding: $spacing * 4  $spacing * 2;
+	}
+	
+	&__inner {
+		overflow: hidden;
+	}
+	
+	&__grid {
+		display: inline-flex;
+		align-items: center;
+	}
 	
 	&__title {
 		@include type-setting(0);
@@ -9,17 +24,25 @@
 	}
 	
 	&__image {
-		margin-bottom: $spacing*2;
-		
+		display: block;
+		margin: 0 auto $spacing*2 auto;
+	
+		&__outer {
+			@include media($medium-up) {
+				@include span-columns(6);
+			}
+		}
 	}
 	
 	&__description {
 		@include type-setting(-2);
 		margin-bottom: $spacing*2;
-	}
-	
-	&__button {
-	
+		
+		&__outer {
+			@include media($medium-up) {
+				@include span-columns(6);
+			}
+		}
 	}
 	
 }
