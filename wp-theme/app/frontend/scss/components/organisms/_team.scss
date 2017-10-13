@@ -1,46 +1,91 @@
 .o-team {
 	
-	padding: $spacing * 2;
 	@include background-light();
 	
+	&__inner {
+		@extend .l-container;
+	}
+	
 	&__title {
-		@include type-setting(0);
-		text-align: center;
-		margin-bottom: $spacing*2;
+		@extend .a-title;
 	}
 	
 	&__info {
 		text-align: center;
 		margin-bottom: $spacing*2;
-	}
-	
-	&__members {
-		overflow: hidden;
+		
+		@include media($medium-up) {
+			@include type-setting(0);
+			margin-bottom: $spacing*5;
+		}
+		
+		@include media($large-up) {
+			@include type-setting(1);
+			margin-bottom: $spacing*10;
+		}
 	}
 	
 	&__member {
-		@include span-columns(6);
-		text-align: center;
 		
-		&:nth-of-type(2n) {
-			margin-right: 0;
+		&__list {
+			overflow: hidden;
+		}
+		
+		&__item {
+			text-align: center;
+			position: relative;
+			margin-bottom: $spacing;
+			@include span-columns(6);
+			
+			@include media($small) {
+				
+				&:nth-of-type(2n) {
+					margin-right: 0;
+				}
+			}
+			
+			@include media($medium) {
+				@include span-columns(3);
+				
+				&:nth-of-type(4n) {
+					margin-right: 0;
+				}
+			}
+			
+			@include media($large-up) {
+				@include span-columns(2);
+				
+				&:nth-of-type(6n) {
+					margin-right: 0;
+				}
+			}
+			
+			&:before {
+				content: '';
+				display: block;
+				padding-bottom: 100%;
+			}
 		}
 		
 		&__inner {
-			display: inline-block;
-			height: 150px;
-			width: 150px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
 			border-top-width: 4px;
 			border-top-style: solid;
 			border-color: $sc-blue;
 			overflow: hidden;
 			cursor: pointer;
 			
-			position: relative; // name relative
-			
 			&:hover > div {
 				top: 0;
 			}
+		}
+		
+		&__picture {
+			width: 100%;
 		}
 		
 		&__overlay {
@@ -56,8 +101,10 @@
 		}
 		
 		&__copy {
-			position: absolute;
-			bottom: $spacing;
+			position: relative;
+			bottom: 1rem;
+			top: 50%;
+			transform: translateY(-50%);
 		}
 		
 		&__name {

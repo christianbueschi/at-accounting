@@ -1,6 +1,6 @@
 .o-platform {
 	
-	&__inner {
+	&__outer {
 		background-size: cover;
 		background-position: center center;
 		padding: 2rem;
@@ -11,12 +11,13 @@
 		}
 	}
 	
+	&__inner {
+		@extend .l-container;
+	}
+	
 	&__title {
-		@include type-setting(0);
-		text-align: center;
+		@extend .a-title;
 		color: white;
-		margin-bottom: $spacing*2;
-		position: relative;
 	}
 	
 	&__text {
@@ -25,6 +26,16 @@
 		color: white;
 		margin-bottom: $spacing * 2;
 		position: relative;
+		
+		@include media($medium-up) {
+			@include type-setting(0);
+			margin-bottom: $spacing * 6;
+		}
+		
+		@include media($large-up) {
+			@include type-setting(1);
+			margin-bottom: $spacing * 8;
+		}
 	}
 	
 	&__logos {

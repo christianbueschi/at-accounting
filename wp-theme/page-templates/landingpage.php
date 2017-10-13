@@ -77,7 +77,7 @@ get_header();
 			<?php if (get_row_layout() === 'license_calculator') : ?>
 
 				<?=
-				module('licenseCalculator')
+				module('calculator')
 					->tag('section')
 					->ctrl(); ?>
 

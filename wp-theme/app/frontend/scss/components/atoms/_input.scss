@@ -14,7 +14,13 @@
 	
 	@include media($medium-up) {
 		line-height: 48px;
-		min-width: 160px;
+		height: 48px;
+		min-width: 360px;
+	}
+	
+	&:focus {
+		outline: none;
+		border-color: $sc-blue;
 	}
 	
 }

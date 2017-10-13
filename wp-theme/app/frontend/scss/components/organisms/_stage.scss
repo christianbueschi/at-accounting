@@ -2,7 +2,7 @@
 	
 	position: relative;
 	
-	&__inner {
+	&__outer {
 		background-size: cover;
 		background-position: center center;
 		position: relative; // image relative
@@ -16,6 +16,10 @@
 		}
 	}
 	
+	&__inner {
+		@include outer-container();
+	}
+	
 	&__title {
 		@include type-setting(-1);
 		color: white;
@@ -23,7 +27,13 @@
 		padding: $header-height-s $spacing*2 0 $spacing*2;
 		
 		@include media($medium-up) {
-			@include type-setting(0);
+			@include type-setting(1);
+			padding: calc(#{$header-height-s} + #{$spacing}) $spacing*2 0 $spacing*2;
+		}
+		
+		@include media($large-up) {
+			@include type-setting(3);
+			padding: calc(#{$header-height-l} + #{$spacing} * 3) $spacing*2 0 $spacing*2;
 		}
 		
 		&__outer {
@@ -36,12 +46,12 @@
 	&__subheading {
 		@include type-setting(-2);
 		font-family: $font-family-serif;
-		font-weight: 600;
 		color: $sc-blue;
 		position: relative;
 		padding: 0 $spacing*2;
 		
 		@include media($medium-up) {
+			@include type-setting(-1);
 			text-align: left;
 		}
 	}
@@ -56,10 +66,18 @@
 		margin-bottom: -45px;
 		
 		@include media($medium-up) {
-			padding-left: $spacing * 2;
+			padding-left: $spacing * 4;
 			margin: 0;
 			width: calc(50%);
-			transform: translateY(25%);
+		}
+		
+		&__outer {
+			@include media($medium-up) {
+				display: inline-flex;
+				align-items: center;
+				width: 100%;
+				transform: translateY(25%);
+			}
 		}
 	}
 	
@@ -71,10 +89,32 @@
 		
 		@include media($medium-up) {
 			background-color: transparent;
-			position: absolute;
+			position: relative;
+			padding-top: 0;
+			transform: translateY(-10%);
 			bottom: 0;
 			right: 0;
 			width: 50%;
+		}
+		
+		@include media($large-up) {
+			transform: translateY(-25%);
+		}
+		
+		&--largescreen {
+			display: none;
+			
+			@include media($medium-up) {
+				display: block;
+			}
+		}
+		
+		&--smallscreen {
+			display: block;
+			
+			@include media($medium-up) {
+				display: none;
+			}
 		}
 		
 		&__tagline {
@@ -84,11 +124,24 @@
 			
 			@include media($medium-up) {
 				@include span-columns(12);
+				@include type-setting(-1);
 				margin-bottom: $spacing;
+				text-align: left;
 			}
 		}
 		
 		&__button {
+			
+			@include media($small) {
+				background-color: transparent;
+				border: 1px solid white;
+				
+				&:hover {
+					cursor: pointer;
+					outline: none;
+					border-color: $grey-40;
+				}
+			}
 			
 			&__outer {
 				@include span-columns(5);

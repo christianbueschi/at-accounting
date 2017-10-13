@@ -1,8 +1,8 @@
 <?php
 
-namespace NxModule\licenseCalculator;
+namespace NxModule\calculator;
 
-class licenseCalculatorCtrl {
+class CalculatorCtrl {
 
 	/**
 	 * Define default args for the controller

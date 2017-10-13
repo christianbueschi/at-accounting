@@ -1,30 +1,33 @@
-<div class="o-platform__inner" style="background-image: url(<?= $data->background_image['url']; ?>)">
+<div class="o-platform__outer" style="background-image: url(<?= $data->background_image['url']; ?>)">
 
-	<h1 class="o-platform__title"><?= $data->title; ?></h1>
+	<div class="o-platform__inner">
 
-	<p class="o-platform__text"><?= $data->text; ?></p>
+		<h1 class="o-platform__title"><?= $data->title; ?></h1>
 
-	<?php if(have_rows('platform_logos')) : ?>
+		<p class="o-platform__text"><?= $data->text; ?></p>
 
-		<ul class="o-platform__logos">
+		<?php if (have_rows('platform_logos')) : ?>
 
-		<?php while (have_rows('platform_logos')) : the_row() ?>
+			<ul class="o-platform__logos">
 
-			<li class="o-platform__logo">
+				<?php while (have_rows('platform_logos')) : the_row() ?>
 
-				<?php
-				$image = get_sub_field('platform_logo');
-				$imageUrl = $image['url'];
-				?>
+					<li class="o-platform__logo">
 
-				<img src="<?= $imageUrl ?>" alt="">
+						<?php
+						$image = get_sub_field('platform_logo');
+						$imageUrl = $image['url'];
+						?>
 
-			</li>
+						<img src="<?= $imageUrl ?>" alt="">
 
-		<?php endwhile; ?>
+					</li>
 
-		</ul>
+				<?php endwhile; ?>
 
-	<?php endif; ?>
+			</ul>
+
+		<?php endif; ?>
+	</div>
 
 </div>

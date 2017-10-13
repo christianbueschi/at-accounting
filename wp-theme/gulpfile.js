@@ -12,7 +12,7 @@ var gulp 			= require('gulp'),
 	appDefaults 	= {
 		stylesInputDir : "app/frontend",
 		stylesOutputDir : "_static/build/",
-        scriptsInputDir : "app/js",
+        scriptsInputDir : "app/",
         scriptsOutputDir : "_static/build/"
 	};
 
@@ -34,7 +34,7 @@ gulp.task('styles', function() {
 
 // Scripts
 gulp.task('scripts', function() {
-    return gulp.src(appDefaults.scriptsInputDir + '/js/**/*.js')
+    return gulp.src(appDefaults.scriptsInputDir + '/**/*.js')
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest(appDefaults.stylesOutputDir))
         .pipe(rename({ suffix: '.min' }))

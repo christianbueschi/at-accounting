@@ -1,0 +1,34 @@
+.l-page {
+	position: relative;
+	transition: left .25s ease-in-out;
+	left: 0;
+	
+	.is-nav-open & {
+		left: -$nav-width;
+	}
+}
+
+.l-nav {
+	position: fixed;
+	height: 100vh;
+	width: $nav-width;
+	right: -$nav-width;
+	transition: right .25s ease-in-out;
+	
+	.is-nav-open & {
+		right: 0;
+	}
+}
+
+.l-container {
+	@include outer-container();
+	padding: $spacing * 2;
+	
+	@include media($medium-up) {
+		padding: $spacing * 5 $spacing * 2;
+	}
+	
+	@include media($large-up) {
+		padding: $spacing * 10 $spacing * 2;
+	}
+}

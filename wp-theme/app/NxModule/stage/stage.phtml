@@ -1,19 +1,24 @@
-<div class="o-stage__inner" style="background-image: url(<?= $data->background_image['url']; ?>)">
-
-	<div class="o-stage__title__outer">
-		<h1 class="o-stage__title"><?= $data->title; ?></h1>
-		<h2 class="o-stage__subheading"><?= $data->subheading; ?></h2>
+<div class="o-stage__outer" style="background-image: url(<?= $data->background_image['url']; ?>)">
+	<div class="o-stage__inner">
+		<div class="o-stage__title__outer">
+			<h1 class="o-stage__title"><?= $data->title; ?></h1>
+			<h2 class="o-stage__subheading"><?= $data->subheading; ?></h2>
+		</div>
+		<div class="o-stage__image__outer">
+			<img class="o-stage__image" src="<?= $data->product_image['url']; ?>" alt="">
+			<div class="o-stage__cta o-stage__cta--largescreen">
+				<p class="o-stage__cta__tagline"><?= $data->tagline; ?></p>
+				<div class="o-stage__cta__button__outer">
+					<a class="o-stage__cta__button a-button" href="<?= $data->cta_link; ?>"><?= $data->cta; ?></a>
+				</div>
+			</div>
+		</div>
 	</div>
-
-	<img class="o-stage__image" src="<?= $data->product_image['url']; ?>" alt="">
-
-</div>
-
-<div class="o-stage__cta">
-	<p class="o-stage__cta__tagline"><?= $data->tagline; ?></p>
-	<div class="o-stage__cta__button__outer">
-		<a class="o-stage__cta__button a-button a-button--outline" href="<?= $data->cta_link; ?>"><?= $data->cta; ?></a>
-
+	<div class="o-stage__cta o-stage__cta--smallscreen">
+		<p class="o-stage__cta__tagline"><?= $data->tagline; ?></p>
+		<div class="o-stage__cta__button__outer">
+			<a class="o-stage__cta__button a-button" href="<?= $data->cta_link; ?>"><?= $data->cta; ?></a>
+		</div>
 	</div>
 </div>
 

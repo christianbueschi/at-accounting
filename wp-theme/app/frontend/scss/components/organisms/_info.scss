@@ -1,21 +1,40 @@
 .o-info {
 	
-	padding: $spacing*4 $spacing*2;
+	
 	@include background-light();
 	
 	@include media($medium-up) {
-		padding-top: $spacing * 6;
+		padding-top: $spacing * 2;
+	}
+	
+	@include media($large-up) {
+		padding-top: $spacing * 5;
 	}
 	
 	&__copy {
 		@include type-setting(-1);
 		text-align: center;
 		
+		@include media($medium-up) {
+			@include type-setting(0);
+		}
+		
+		@include media($large-up) {
+			@include type-setting(1);
+		}
+		
 		em {
 			@include type-setting(-2);
 			display: block;
 			font-style: italic;
-			margin-top: $spacing;
+			
+			@include media($medium-up) {
+				@include type-setting(-1);
+			}
+			
+			@include media($large-up) {
+				@include type-setting(0);
+			}
 			
 			&:after {
 				font-family: $icon-font-family;

@@ -25,6 +25,22 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+
+.icon-information-circle:before {
+	content: "\e02e";
+}
+.icon-chevron-flat-down:before {
+	content: "\e011";
+}
+.icon-chevron-flat-up:before {
+	content: "\e014";
+}
+.icon-close:before {
+	content: "\e016";
+}
+.icon-heart:before {
+	content: "\e02b";
+}
 .icon-menu:before {
 	content: "\e032";
 }

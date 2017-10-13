@@ -1,28 +1,30 @@
-<h2 class="o-team__title"><?= $data->title ?></h2>
-<p class="o-team__info"><?= $data->info ?></p>
-<ul class="o-team__members">
+<div class="o-team__inner">
+	<h2 class="o-team__title"><?= $data->title ?></h2>
+	<p class="o-team__info"><?= $data->info ?></p>
+	<ul class="o-team__member__list">
 
-	<?php if (have_rows('team_members')) : ?>
+		<?php if (have_rows('team_members')) : ?>
 
-		<?php while (have_rows('team_members')) : the_row() ?>
+			<?php while (have_rows('team_members')) : the_row() ?>
 
-			<?php $picture = get_sub_field('team_members_picture'); ?>
+				<?php $picture = get_sub_field('team_members_picture'); ?>
 
-			<li class="o-team__member">
-				<div class="o-team__member__inner">
-					<img class="o-team__member__picture" src="<?= $picture['url'] ?>" alt="">
-					<div class="o-team__member__overlay">
-						<div class="o-team__member__copy">
-							<h4 class="o-team__member__name"><?= get_sub_field('team_members_name') ?></h4>
-							<h5 class="o-team__member__role"><?= get_sub_field('team_members_role') ?></h5>
+				<li class="o-team__member__item">
+					<div class="o-team__member__inner">
+						<img class="o-team__member__picture" src="<?= $picture['url'] ?>" alt="">
+						<div class="o-team__member__overlay">
+							<div class="o-team__member__copy">
+								<h4 class="o-team__member__name"><?= get_sub_field('team_members_name') ?></h4>
+								<h5 class="o-team__member__role"><?= get_sub_field('team_members_role') ?></h5>
+							</div>
 						</div>
 					</div>
-				</div>
-			</li>
+				</li>
 
-		<?php endwhile; ?>
+			<?php endwhile; ?>
 
-	<?php endif; ?>
-</ul>
+		<?php endif; ?>
+	</ul>
+</div>
 
 

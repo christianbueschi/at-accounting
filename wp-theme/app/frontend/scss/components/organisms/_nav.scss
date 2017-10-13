@@ -1,0 +1,24 @@
+.o-nav {
+	
+	background-color: $horizon;
+	
+	&__list {
+		margin: $spacing * 3;
+	}
+	
+	&__item {
+		border-bottom: 1px solid $aluminium;
+	}
+	
+	&__link {
+		@include type-setting(-2);
+		display: block;
+		text-decoration: none;
+		color: $sc-navy;
+		padding: $spacing 0;
+		
+		&:hover {
+			color: $blue-rollover;
+		}
+	}
+}

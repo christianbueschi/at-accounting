@@ -1,19 +1,17 @@
+<div class="o-featurelist__inner">
+	<h2 class="o-featurelist__title"><?= get_sub_field('features_title') ?></h2>
 
+	<?php if (have_rows('features_item')): ?>
 
-<h2 class="o-featurelist__title"><?= get_sub_field('features_title') ?></h2>
+		<?php while (have_rows('features_item')) : the_row() ?>
 
-<?php if (have_rows('features_item')): ?>
+			<?= module('feature')
+				->tag('li')
+				->ctrl(); ?>
 
-	<?php while (have_rows('features_item')) : the_row() ?>
+		<?php endwhile; ?>
 
-		<?= module('feature')
-			->tag('li')
-			->ctrl(); ?>
-
-
-	<?php endwhile; ?>
-
-
-<?php endif; ?>
+	<?php endif; ?>
+</div>
 
 

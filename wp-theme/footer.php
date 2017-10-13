@@ -7,16 +7,18 @@
  * @package nxtheme
  */
 ?>
-		</main>
+			</main>
 
-		<?=
-		module('footer')
-			->tag('footer')
-			->classes('page-centered box-content')
-			->attrib('role', 'contentinfo')
-			->ctrl(); ?>
+			<?=
+			module('footer')
+				->tag('footer')
+				->classes('page-centered box-content')
+				->attrib('role', 'contentinfo')
+				->ctrl(); ?>
 
-		<?php wp_footer(); ?>
+			<?php wp_footer(); ?>
+
+		</div>
 
 	</body>
 </html>

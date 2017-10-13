@@ -171,7 +171,7 @@ class Theme {
 	protected static function menus() {
 
 		register_nav_menus(array(
-			'lang' => __('Lang Menu', 'nxtheme'),
+			'main-nav' => __('Main Menu', 'nxtheme'),
 			'footer-links' => __('Footer Links', 'nxtheme'),
 			'footer-social' => __('Footer Social Menu', 'nxtheme')
 		));

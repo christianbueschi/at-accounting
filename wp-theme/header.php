@@ -34,6 +34,13 @@
 
 	<body <?php body_class(); ?>>
 
+		<?= module('nav')
+			->tag('nav')
+			->classes('l-nav')
+			->ctrl() ?>
+
+		<div class="l-page">
+
 		<?= module('header')
 			->tag('header')
 			->attrib('role', 'banner')
