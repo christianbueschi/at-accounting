@@ -1,6 +1,5 @@
 .o-info {
 	
-	
 	@include background-light();
 	
 	@include media($medium-up) {
@@ -9,6 +8,10 @@
 	
 	@include media($large-up) {
 		padding-top: $spacing * 5;
+	}
+	
+	&--small {
+		padding-top: 0;
 	}
 	
 	&__copy {

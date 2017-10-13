@@ -43,6 +43,10 @@
 					outline: none;
 				}
 				
+				&:hover {
+					cursor: pointer;
+				}
+				
 				&-menu {
 					.is-nav-open & {
 						

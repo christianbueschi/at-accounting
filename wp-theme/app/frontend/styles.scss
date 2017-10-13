@@ -26,18 +26,19 @@
 
 
 // Organisms
-@import "scss/components/organisms/footer";
-@import "scss/components/organisms/info";
-@import "scss/components/organisms/header";
 @import "scss/components/organisms/calculator";
-@import "scss/components/organisms/nav";
-@import "scss/components/organisms/platform";
+@import "scss/components/organisms/content";
+@import "scss/components/organisms/downloads";
 @import "scss/components/organisms/feature";
 @import "scss/components/organisms/featurelist";
+@import "scss/components/organisms/footer";
+@import "scss/components/organisms/header";
+@import "scss/components/organisms/info";
+@import "scss/components/organisms/nav";
+@import "scss/components/organisms/platform";
+@import "scss/components/organisms/stage";
 @import "scss/components/organisms/team";
 @import "scss/components/organisms/topfeature";
-@import "scss/components/organisms/stage";
-//@import "scss/components/molecules/";
-//@import "scss/components/organisms/";
+@import "scss/components/organisms/videos";
 
 

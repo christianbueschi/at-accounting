@@ -2,7 +2,10 @@
 	
 	overflow: hidden;
 	@include background-light();
-	@extend .l-container;
+	
+	&__inner {
+		@extend .l-container;
+	}
 	
 	&__title {
 		@include type-setting(0);

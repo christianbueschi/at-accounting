@@ -43,7 +43,7 @@ class infoCtrl {
 
 		// View Data
 		$viewData['post_id'] = get_the_ID();
-		$viewData['content'] = get_sub_field('info_content');
+		$viewData['content'] = (get_sub_field('info_content') ? get_sub_field('info_content') : get_sub_field('subline_subpage_text'));
 
 		return $viewData;
 	}

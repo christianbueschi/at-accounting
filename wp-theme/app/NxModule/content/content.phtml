@@ -1,0 +1,70 @@
+<div class="o-content__inner">
+
+	<?php if (get_sub_field('cols_subpage') == '2') : ?>
+
+	<div class="o-content__left">
+
+	<?php endif; ?>
+
+		<?php if (have_rows('content_left_subpage')) : ?>
+
+
+			<?php while (have_rows('content_left_subpage')) : the_row() ?>
+
+				<?php if (get_row_layout() === 'content_text') : ?>
+
+					<p><?= get_sub_field('content_text') ?></p>
+
+				<?php endif; ?>
+
+				<?php if (get_row_layout() === 'content_image') : ?>
+
+					<?php $image = get_sub_field('content_image') ?>
+
+					<figure class="o-content__figure">
+						<img class="o-content__figure__img" src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>">
+						<figcaption class="o-content__figure__caption"><?= $image['caption'] ?></figcaption>
+					</figure>
+
+				<?php endif; ?>
+
+			<?php endwhile; ?>
+
+		<?php endif; ?>
+
+
+	<?php if (get_sub_field('cols_subpage') == '2') : ?>
+
+	</div>
+
+	<?php endif; ?>
+
+	<?php if (have_rows('content_right_subpage')) : ?>
+
+		<div class="o-content__right">
+
+			<?php while (have_rows('content_right_subpage')) : the_row() ?>
+
+				<?php if (get_row_layout() === 'content_text') : ?>
+
+					<p><?= get_sub_field('content_text') ?></p>
+
+				<?php endif; ?>
+				<?php if (get_row_layout() === 'content_image') : ?>
+
+					<?php $image = get_sub_field('content_image') ?>
+
+					<figure class="o-content__figure">
+						<img class="o-content__figure__img" src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>">
+						<figcaption class="o-content__figure__caption"><?= $image['caption'] ?></figcaption>
+					</figure>
+
+				<?php endif; ?>
+
+			<?php endwhile; ?>
+
+		</div>
+
+	<?php endif; ?>
+
+</div>

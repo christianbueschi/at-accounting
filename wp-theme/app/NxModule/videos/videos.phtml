@@ -1,0 +1,25 @@
+<div class="o-videos__inner">
+
+	<?php if (have_rows('video_list')) : ?>
+
+		<ul class="o-videos__list">
+
+		<?php while (have_rows('video_list')) : the_row() ?>
+
+			<li class="o-videos__item">
+				<h4 class="o-videos__item__title"><?= get_sub_field('video_title')?></h4>
+
+				<div class="o-videos__item__embed">
+					<?= get_sub_field('video') ?>
+				</div>
+
+			</li>
+
+		<?php endwhile; ?>
+
+		</ul>
+
+	<?php endif; ?>
+
+</div>
+

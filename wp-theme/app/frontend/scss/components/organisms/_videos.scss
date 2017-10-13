@@ -1,0 +1,59 @@
+.o-videos {
+	
+	@include background-light();
+	
+	&__inner {
+		@extend .l-container;
+	}
+	
+	&__list {
+	
+	}
+	
+	&__item {
+		
+		margin-bottom: $spacing * 3;
+		
+		@include media($medium) {
+			@include span-columns(6);
+			
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+		
+		@include media($large-up) {
+			@include span-columns(4);
+			
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+		}
+		
+		&__title {
+			@include type-setting(0);
+			margin-bottom: $spacing * 2;
+			@include ellipsis(100%);
+		}
+		
+		&__embed {
+			position: relative;
+			padding-bottom: 56.25%;
+			height: 0;
+			overflow: hidden;
+			max-width: 100%;
+			height: auto;
+			
+			iframe,
+			object,
+			embed {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	
+}

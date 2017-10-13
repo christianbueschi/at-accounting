@@ -26,6 +26,18 @@
 }
 
 
+.icon-document:before {
+	content: "\e076";
+}
+.icon-document-pdf:before {
+	content: "\e07b";
+}
+.icon-document-txt:before {
+	content: "\e07c";
+}
+.icon-document-code:before {
+	content: "\e07e";
+}
 .icon-information-circle:before {
 	content: "\e02e";
 }

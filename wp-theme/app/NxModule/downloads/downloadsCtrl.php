@@ -1,8 +1,8 @@
 <?php
 
-namespace NxModule\stage;
+namespace NxModule\downloads;
 
-class stageCtrl {
+class downloadsCtrl {
 
 	/**
 	 * Define default args for the controller
@@ -43,13 +43,6 @@ class stageCtrl {
 
 		// View Data
 		$viewData['post_id'] = get_the_ID();
-		$viewData['title'] = get_the_title();
-		$viewData['subheading'] = get_sub_field('stage_landing_subheading');
-		$viewData['tagline'] = get_sub_field('stage_landing_tagline');
-		$viewData['cta'] = get_sub_field('stage_landing_cta');
-		$viewData['cta_link'] = get_sub_field('stage_landing_cta_link');
-		$viewData['background_image'] = (get_sub_field('stage_landing_background_image') ? get_sub_field('stage_landing_background_image') : get_sub_field('stage_sub_background_image'));
-		$viewData['product_image'] = get_sub_field('stage_landing_product_image');
 
 		return $viewData;
 	}
