@@ -1,27 +1,16 @@
-.a-input {
-	
-	font-family: $font-family;
+.a-select {
 	@include type-setting(-2);
+	font-family: $font-family;
 	background-color: white;
 	color: $grey-80;
 	border-radius: 5px;
-	padding: 0 $spacing;
+	padding: $spacing;
 	border: 1px solid $grey-20;
 	
 	-webkit-appearance: none;
-	
-	line-height: 42px;
-	height: 42px;
-	
-	@include media($medium-up) {
-		line-height: 48px;
-		height: 48px;
-		min-width: 360px;
-	}
 	
 	&:focus {
 		outline: none;
 		border-color: $sc-blue;
 	}
-	
 }

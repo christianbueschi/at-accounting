@@ -74,6 +74,10 @@
 			text-align: left;
 			padding: 0 $spacing*2;
 		}
+		
+		&__typed {
+			display: none;
+		}
 	}
 	
 	&__image {

@@ -3,7 +3,7 @@
 		<div class="o-stage__title__outer">
 			<h1 class="o-stage__title"><?= $data->title; ?></h1>
 			<?php if (have_rows('stage_landing_subheadings')) : ?>
-				<div id="js-subheadings">
+				<div class="o-stage__subheading__typed" id="js-subheadings">
 					<?php while (have_rows('stage_landing_subheadings')) : the_row() ?>
 
 						<h2 class="o-stage__subheading"><?= get_sub_field('stage_landing_subheading') ?></h2>

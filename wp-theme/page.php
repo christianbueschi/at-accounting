@@ -88,6 +88,18 @@ get_header();
 
 			<?php endif; ?>
 
+			<!--IMAGE LIST-->
+
+			<?php if (get_row_layout() === 'image_list') : ?>
+
+				<?=
+				module('imagelist')
+					->tag('section')
+					->ctrl(); ?>
+
+
+			<?php endif; ?>
+
 
 		<?php endwhile; ?>
 

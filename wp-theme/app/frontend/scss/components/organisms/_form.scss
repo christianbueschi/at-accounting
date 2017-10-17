@@ -1,0 +1,56 @@
+.o-form {
+	margin: 0 auto;
+	
+	@include media($medium) {
+		width: 80%;
+	}
+	
+	@include media($large-up) {
+		width: 60%;
+	}
+	
+	input[type="text"],
+	input[type="email"] {
+		@extend .a-input;
+	}
+	
+	input[type="button"] {
+		@extend .a-button;
+	}
+	
+	label {
+		@extend .a-label;
+	}
+	
+	textarea {
+		@extend .a-textarea;
+	}
+	
+	select {
+		@extend .a-select;
+	}
+	
+	// Overwrite Ninja Form Styles
+	
+	.nf-field-container {
+		margin-bottom: $spacing * 2;
+	}
+	
+	.nf-form-fields-required {
+		display: none;
+	}
+	
+	.nf-error-wrap,
+	.nf-error-msg {
+		@include type-setting(-2);
+		color: $sc-red;
+	}
+	
+	.nf-response-msg {
+		color: $green-interaction;
+		
+		> p {
+			margin-bottom: 0;
+		}
+	}
+}

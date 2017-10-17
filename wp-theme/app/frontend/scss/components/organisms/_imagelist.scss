@@ -1,0 +1,52 @@
+.o-imagelist {
+	@include background-light();
+	
+	&__inner {
+		@extend .l-container;
+	}
+	
+	&__title {
+		@include type-setting(0);
+		text-align: center;
+		margin-bottom: $spacing * 2;
+		
+		@include media($medium-up) {
+			@include type-setting(1);
+			margin-bottom: $spacing * 4;
+		}
+	}
+	
+	&__list {
+	
+	}
+	
+	&__item {
+		@include span-columns(4);
+		margin-bottom: $spacing;
+		
+		
+		@include media($small) {
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+		}
+		
+		@include media($medium) {
+			@include span-columns(3);
+			
+			&:nth-child(4n) {
+				margin-right: 0;
+			}
+		}
+		
+		@include media($large-up) {
+			@include span-columns(2);
+			
+			&:nth-child(6n) {
+				margin-right: 0;
+			}
+		}
+		
+		
+	}
+}

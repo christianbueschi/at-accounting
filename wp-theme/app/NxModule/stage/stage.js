@@ -8,6 +8,8 @@
         backDelay: 2000
     };
 
-    new Typed('#js-subheading', options);
+    if($('#js-subheadings').length > 0) {
+        new Typed('#js-subheading', options);
+    }
 
 })();

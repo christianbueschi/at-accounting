@@ -146,6 +146,10 @@ class Theme {
 		add_filter('excerpt_more', array('\NxTheme\Filters', 'excerpt_more'));
 
 		add_filter('img_caption_shortcode', array('\NxTheme\Filters', 'custom_caption'), 10, 3);
+
+		add_filter('mce_buttons_2', array('\NxTheme\Filters', 'editor_buttons'), 10, 3);
+
+		add_filter( 'tiny_mce_before_init', array('\NxTheme\Filters', 'my_mce_before_init_insert_formats' ), 10, 3);
 	}
 
 	protected static function actions() {

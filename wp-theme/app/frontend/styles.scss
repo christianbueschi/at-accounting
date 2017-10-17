@@ -22,8 +22,11 @@
 // Atoms
 @import "scss/components/atoms/button";
 @import "scss/components/atoms/input";
+@import "scss/components/atoms/label";
 @import "scss/components/atoms/link";
 @import "scss/components/atoms/logo";
+@import "scss/components/atoms/select";
+@import "scss/components/atoms/textarea";
 @import "scss/components/atoms/title";
 
 
@@ -36,10 +39,13 @@
 @import "scss/components/organisms/feature";
 @import "scss/components/organisms/featurelist";
 @import "scss/components/organisms/footer";
+@import "scss/components/organisms/form";
 @import "scss/components/organisms/header";
+@import "scss/components/organisms/imagelist";
 @import "scss/components/organisms/info";
 @import "scss/components/organisms/nav";
 @import "scss/components/organisms/platform";
+@import "scss/components/organisms/search";
 @import "scss/components/organisms/stage";
 @import "scss/components/organisms/team";
 @import "scss/components/organisms/teaser";

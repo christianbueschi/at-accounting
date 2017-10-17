@@ -1,0 +1,29 @@
+.o-search {
+	display: none;
+	//position: absolute;
+	background: rgba(0,0,0,.5);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: $header-height-s;
+	
+	.is-search-open & {
+		display: block;
+	}
+	
+	&__inner {
+	
+	}
+	
+	&__form {
+	
+	}
+	
+	&__input {
+	
+	}
+	
+	&__button {
+	
+	}
+}
