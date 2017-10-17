@@ -21,7 +21,7 @@
 	}
 	
 	&__title {
-		@include type-setting(-1);
+		@include type-setting(0);
 		color: white;
 		position: relative;
 		padding: $header-height-s $spacing*2 0 $spacing*2;

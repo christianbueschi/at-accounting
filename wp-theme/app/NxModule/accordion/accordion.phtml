@@ -1,0 +1,25 @@
+<div class="o-accordion__inner">
+
+	<?php if (have_rows('accordion_item')): ?>
+
+		<ul class="o-accordion__list">
+
+		<?php while (have_rows('accordion_item')) : the_row() ?>
+
+			<li class="o-accordion__item js-accordion-item">
+				<h3 class="o-accordion__item__title js-accordion-title">
+					<?= get_sub_field('accordion_item_title') ?>
+					<span class="o-accordion__item__chevron"></span>
+				</h3>
+				<div class="o-accordion__item__body js-accordion-body">
+					<?= get_sub_field('accordion_item_content') ?>
+				</div>
+			</li>
+
+		<?php endwhile; ?>
+		</ul>
+
+	<?php endif; ?>
+
+</div>
+

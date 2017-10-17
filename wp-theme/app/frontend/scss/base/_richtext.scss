@@ -1,0 +1,11 @@
+.richtext {
+	
+	a {
+		@extend .a-link;
+	}
+	
+	strong {
+		font-family: $font-family-bold;
+		color: $grey;
+	}
+}

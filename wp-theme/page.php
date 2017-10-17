@@ -76,6 +76,18 @@ get_header();
 
 			<?php endif; ?>
 
+			<!--ACCORDION-->
+
+			<?php if (get_row_layout() === 'accordion_subpage') : ?>
+
+				<?=
+				module('accordion')
+					->tag('section')
+					->ctrl(); ?>
+
+
+			<?php endif; ?>
+
 
 		<?php endwhile; ?>
 
