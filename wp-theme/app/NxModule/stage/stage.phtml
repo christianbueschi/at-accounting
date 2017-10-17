@@ -2,8 +2,17 @@
 	<div class="o-stage__inner">
 		<div class="o-stage__title__outer">
 			<h1 class="o-stage__title"><?= $data->title; ?></h1>
-			<?php if($data->subheading) : ?>
-				<h2 class="o-stage__subheading"><?= $data->subheading; ?></h2>
+			<?php if (have_rows('stage_landing_subheadings')) : ?>
+				<div id="js-subheadings">
+					<?php while (have_rows('stage_landing_subheadings')) : the_row() ?>
+
+						<h2 class="o-stage__subheading"><?= get_sub_field('stage_landing_subheading') ?></h2>
+
+					<?php endwhile; ?>
+				</div>
+				<div class="o-stage__subheading__outer">
+					<h2 class="o-stage__subheading" id="js-subheading"></h2>
+				</div>
 			<?php endif; ?>
 		</div>
 		<?php if ($data->product_image) : ?>

@@ -59,15 +59,20 @@
 	}
 	
 	&__subheading {
+		display: inline-block;
 		@include type-setting(-2);
 		font-family: $font-family-serif;
 		color: $sc-blue;
 		position: relative;
-		padding: 0 $spacing*2;
 		
 		@include media($medium-up) {
 			@include type-setting(-1);
 			text-align: left;
+		}
+		
+		&__outer {
+			text-align: left;
+			padding: 0 $spacing*2;
 		}
 	}
 	

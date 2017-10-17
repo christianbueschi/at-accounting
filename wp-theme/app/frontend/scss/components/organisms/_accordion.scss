@@ -2,6 +2,8 @@
 	
 	$chevronWidth: 35px;
 	
+	@include background-light();
+	
 	&__inner {
 		@extend .l-container;
 	}

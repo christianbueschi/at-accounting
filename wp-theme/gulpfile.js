@@ -34,7 +34,7 @@ gulp.task('styles', function() {
 
 // Scripts
 gulp.task('scripts', function() {
-    return gulp.src(appDefaults.scriptsInputDir + '/**/*.js')
+    return gulp.src([appDefaults.scriptsInputDir + '/frontend/**/*.js', appDefaults.scriptsInputDir + '/NxModule/**/*.js'])
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest(appDefaults.stylesOutputDir))
         .pipe(rename({ suffix: '.min' }))

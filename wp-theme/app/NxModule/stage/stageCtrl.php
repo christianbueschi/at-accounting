@@ -44,7 +44,6 @@ class StageCtrl {
 		// View Data
 		$viewData['post_id'] = get_the_ID();
 		$viewData['title'] = ($ctrlArgs && $ctrlArgs['Title'] ? $ctrlArgs['Title'] : get_the_title(get_the_ID()));
-		$viewData['subheading'] = get_sub_field('stage_landing_subheading');
 		$viewData['tagline'] = get_sub_field('stage_landing_tagline');
 		$viewData['cta'] = get_sub_field('stage_landing_cta');
 		$viewData['cta_link'] = get_sub_field('stage_landing_cta_link');
