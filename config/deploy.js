@@ -7,9 +7,9 @@ var config = {
     host: "s022.cyon.net",
     port: 21,
     localRoot: "../wp-theme",
-    remoteRoot: "/public_html/wp-content/themes/sharespace/",
-    include: ['_static/build/scripts.min.js', '_static/build/styles.min.css'],
-    exclude: ['_static/*', '**/.DS_Store', 'npm_debug.log', 'node_modules', 'app/frontend', 'NxModule/**/*.js', 'NxModule/**/*.scss', 'package.json']
+    remoteRoot: "/public_html/test/wp-theme",
+    //include: ['_static/build/scripts.min.js', '_static/build/styles.min.css'],
+    exclude: ['**/.DS_Store', 'npm_debug.log', 'node_modules', 'app/frontend', 'NxModule/**/*.js', 'NxModule/**/*.scss', 'package.json']
 };
 
 ftpDeploy.deploy(config, function(err) {
