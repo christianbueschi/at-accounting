@@ -2,7 +2,7 @@
 
 namespace NxModule\platform;
 
-class platformCtrl {
+class PlatformCtrl {
 
 	/**
 	 * Define default args for the controller

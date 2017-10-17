@@ -45,16 +45,16 @@
 	
 	&--small &__title {
 		text-align: center;
-		padding: $header-height-s $spacing*2 $header-height-s $spacing*2;
+		padding: calc(#{$header-height-s} + #{$spacing} * 2) $spacing*2 $header-height-s $spacing*2;
 		
 		@include media($medium-up) {
 			@include type-setting(1);
-			padding: calc(#{$header-height-s} + #{$spacing}) $spacing*2 calc(#{$header-height-s} + #{$spacing}) $spacing*2;
+			padding: calc(#{$header-height-s} + #{$spacing} * 4) $spacing*2 $header-height-s $spacing*2;
 		}
 		
 		@include media($large-up) {
 			@include type-setting(3);
-			padding: calc(#{$header-height-l} + #{$spacing} * 3) $spacing*2 calc(#{$header-height-l} + #{$spacing} * 3) $spacing*2;
+			padding: calc(#{$header-height-l} + #{$spacing} * 5) $spacing*2 $header-height-l $spacing*2;
 		}
 	}
 	

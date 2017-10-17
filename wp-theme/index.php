@@ -13,22 +13,23 @@
 
 get_header(); ?>
 
-	<?=
-	module('teaser')
-		->tag('article')
-		->template('sticky')
-		->skin('sticky')
-		->ctrl(array(), 'dataSticky')
-	?>
+<!--STAGE-->
+
+<?php
+
+$title = get_the_title( get_option('page_for_posts', true) );
+$backgroundImage = get_the_post_thumbnail_url( get_option('page_for_posts', true) );
+?>
 
 	<?=
-	module('teaserlist')
-		->attribs(array(
-			'data-connectors' => 'articles',
-			'data-posts-per-page' => get_option('posts_per_page')
-		))
-		->ctrl(); ?>
+	module('stage')
+		->tag('section')
+		->classes('o-stage--small')
+		->ctrl(array('Title' => $title, 'BackgroundImage' => $backgroundImage)); ?>
 
-	<?= module('teaserlistfooter')->ctrl() ?>
+
+<?=
+module('teaserlist')
+	->ctrl(); ?>
 
 <? get_footer(); ?>

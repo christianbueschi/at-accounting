@@ -8,30 +8,22 @@
 get_header();
 ?>
 
-	<? while (have_posts()) : the_post(); ?>
+<? while (have_posts()) : the_post(); ?>
 
-		<?=
-		module('article')
-			->tag('article')
-			->ctrl(); ?>
+	<?=
+	module('stage')
+		->tag('section')
+		->classes('o-stage--small')
+		->ctrl(array('Title' => get_the_title(), 'BackgroundImage' => get_the_post_thumbnail_url()));
+	?>
 
-		<? if($post->comment_status == 'open'): ?>
+	<?=
+	module('article')
+		->tag('section')
+		->ctrl();
+	?>
 
-			<?=
-			module('commentform')
-				->classes('box-content')
-				->tag('section')
-				->ctrl() ?>
 
-			<?=
-			module('commentlist')
-				->classes('box-content')
-				->tag('section')
-				->ctrl()
-			?>
-
-		<? endif; ?>
-
-	<? endwhile; ?>
+<? endwhile; ?>
 
 <? get_footer(); ?>

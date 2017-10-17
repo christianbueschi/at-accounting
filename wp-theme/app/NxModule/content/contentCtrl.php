@@ -2,7 +2,7 @@
 
 namespace NxModule\content;
 
-class contentCtrl {
+class ContentCtrl {
 
 	/**
 	 * Define default args for the controller

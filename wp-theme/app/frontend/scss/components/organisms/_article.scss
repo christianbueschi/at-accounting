@@ -1,0 +1,73 @@
+.o-article {
+	
+	@include outer-container();
+	
+	&__content {
+		padding: 0 $spacing * 2;
+		margin: $spacing * 4 0;
+		@include type-setting(-2);
+		
+		@include media($medium) {
+			max-width: 70%;
+			margin: $spacing * 4 auto;
+		}
+		
+		@include media($large-up) {
+			max-width: 50%;
+			margin: $spacing * 4 auto;
+		}
+		
+		> h2 {
+			@include type-setting(0);
+			margin: $spacing * 3 0;
+			text-align: center;
+			
+			@include media($medium-up) {
+				@include type-setting(1);
+			}
+			
+		}
+		
+		> h3 {
+			@include type-setting(-1);
+			margin: $spacing * 2 0;
+			color: $grey;
+			text-align: center;
+			
+			@include media($medium-up) {
+				@include type-setting(0);
+			}
+		}
+		
+		> h4 {
+			@include type-setting(0);
+			text-align: center;
+		}
+		
+		> p {
+			@include type-setting(-2);
+		}
+		
+		strong {
+			color: $grey;
+		}
+		
+		> ul {
+			margin: $spacing 0;
+			
+			> li {
+				margin-left: $spacing * 3;
+				list-style: disc;
+			}
+		}
+		
+		> img {
+			width: calc(100% + 100px);
+			height: auto;
+			margin: $spacing 0;
+			
+			margin-left: -50px;
+			margin-right: -50px;
+		}
+	}
+}

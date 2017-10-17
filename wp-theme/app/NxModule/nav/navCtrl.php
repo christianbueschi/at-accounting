@@ -39,6 +39,10 @@ class NavCtrl {
 		// View Data
 		$viewData['post_id'] = get_the_ID();
 
+		$brandImage = get_field('brand_image', 'options');
+		$viewData['brand_image'] = $brandImage['url'];
+		$viewData['brand_link'] = get_field('brand_image_link', 'options');
+
 		// Define menu locations
 		$map_menu_locations = array(
 			'main_nav' => 'main-nav'

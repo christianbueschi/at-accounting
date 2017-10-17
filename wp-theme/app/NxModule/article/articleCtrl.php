@@ -1,8 +1,8 @@
 <?php
 
-namespace NxModule\stage;
+namespace NxModule\article;
 
-class StageCtrl {
+class ArticleCtrl {
 
 	/**
 	 * Define default args for the controller
@@ -43,16 +43,8 @@ class StageCtrl {
 
 		// View Data
 		$viewData['post_id'] = get_the_ID();
-		$viewData['title'] = ($ctrlArgs && $ctrlArgs['Title'] ? $ctrlArgs['Title'] : get_the_title(get_the_ID()));
-		$viewData['subheading'] = get_sub_field('stage_landing_subheading');
-		$viewData['tagline'] = get_sub_field('stage_landing_tagline');
-		$viewData['cta'] = get_sub_field('stage_landing_cta');
-		$viewData['cta_link'] = get_sub_field('stage_landing_cta_link');
-		$viewData['background_image'] = (get_sub_field('stage_landing_background_image') ? get_sub_field('stage_landing_background_image') : get_sub_field('stage_sub_background_image') );
-
-		$viewData['background_image'] = (!$viewData['background_image']) ? $ctrlArgs['BackgroundImage'] : $viewData['background_image']['url'];
-
-		$viewData['product_image'] = get_sub_field('stage_landing_product_image');
+		$viewData['title'] = get_the_title();
+		$viewData['content'] = get_the_content();
 
 		return $viewData;
 	}

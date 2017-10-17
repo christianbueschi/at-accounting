@@ -2,7 +2,7 @@
 
 namespace NxModule\videos;
 
-class videosCtrl {
+class VideosCtrl {
 
 	/**
 	 * Define default args for the controller

@@ -6,6 +6,7 @@
 	z-index: 1;
 	
 	@include media($medium-up) {
+		padding: 2rem;
 		height: 110px;
 	}
 	
@@ -14,7 +15,7 @@
 		padding: $spacing*2 ;
 		
 		@include media($large-up) {
-			padding: $spacing*4;
+			padding: $spacing*4 $spacing*2;
 		}
 	}
 	

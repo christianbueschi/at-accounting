@@ -2,7 +2,7 @@
 
 namespace NxModule\downloads;
 
-class downloadsCtrl {
+class DownloadsCtrl {
 
 	/**
 	 * Define default args for the controller

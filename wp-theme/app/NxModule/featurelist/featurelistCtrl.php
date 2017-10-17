@@ -2,7 +2,7 @@
 
 namespace NxModule\featurelist;
 
-class featurelistCtrl {
+class FeaturelistCtrl {
 
 	/**
 	 * Define default args for the controller

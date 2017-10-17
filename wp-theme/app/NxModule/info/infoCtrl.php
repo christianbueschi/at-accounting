@@ -2,7 +2,7 @@
 
 namespace NxModule\info;
 
-class infoCtrl {
+class InfoCtrl {
 
 	/**
 	 * Define default args for the controller

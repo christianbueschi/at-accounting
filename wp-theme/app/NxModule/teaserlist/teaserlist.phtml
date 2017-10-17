@@ -1,0 +1,18 @@
+<? if ($data->query->have_posts()) : ?>
+
+	<ul class="o-teaserlist__list">
+		<? while ($data->query->have_posts()): $data->query->the_post(); ?>
+
+			<li class="o-teaserlist__item">
+				<?= module('teaser')
+					->ctrl(); ?>
+			</li>
+
+		<? endwhile; ?>
+	</ul>
+<?
+else :
+	module('teaser')->template('empty')->skin('empty');
+endif;
+
+?>

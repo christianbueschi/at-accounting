@@ -1,0 +1,23 @@
+<article>
+	<header>
+		<a href="<?= $data->permalink ?>" class="o-teaser__link">
+			<figure class="o-teaser__figure">
+				<img src="<?= $data->thumbnail_url ?>" alt="" class="o-teaser__figure__image">
+			</figure>
+			<div class="o-teaser__figure__span">
+				<div class="o-teaser__figure__span__inner">
+					<h2 class="o-teaser__title"><?= $data->title ?></h2>
+				</div>
+			</div>
+		</a>
+		<div class="o-teaser__meta">
+			<span class="o-teaser__meta__date"><?= $data->date ?></span>
+			<span class="o-teaser__meta__categories"><?= $data->category_link_list ?></span>
+		</div>
+	</header>
+
+	<div class="o-teaser__copy">
+		<?= $data->excerpt ?>
+	</div>
+
+</article>

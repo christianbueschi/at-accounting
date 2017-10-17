@@ -2,7 +2,7 @@
 
 namespace NxModule\topfeaturelist;
 
-class topfeaturelistCtrl {
+class TopfeaturelistCtrl {
 
 	/**
 	 * Define default args for the controller
