@@ -1,5 +1,4 @@
 .o-info {
-	
 	@include background-light();
 	
 	@include media($medium-up) {
@@ -14,7 +13,12 @@
 		padding-top: 0;
 	}
 	
+	&__inner {
+		@extend .l-container;
+	}
+	
 	&__copy {
+		@extend .l-container--narrow;
 		@include type-setting(-1);
 		text-align: center;
 		

@@ -1,14 +1,6 @@
 .o-form {
 	margin: 0 auto;
 	
-	@include media($medium) {
-		width: 80%;
-	}
-	
-	@include media($large-up) {
-		width: 60%;
-	}
-	
 	input[type="text"],
 	input[type="email"] {
 		@extend .a-input;

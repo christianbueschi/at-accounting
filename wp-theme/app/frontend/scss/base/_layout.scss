@@ -1,6 +1,6 @@
 .l-page {
 	position: relative;
-	transition: left .25s ease-in-out;
+	transition: $transition;
 	left: 0;
 	
 	.is-nav-open & {
@@ -13,7 +13,7 @@
 	height: 100vh;
 	width: $nav-width;
 	right: -$nav-width;
-	transition: right .25s ease-in-out;
+	transition: $transition;
 	
 	.is-nav-open & {
 		right: 0;
@@ -30,5 +30,17 @@
 	
 	@include media($large-up) {
 		padding: $spacing * 10 $spacing * 2;
+	}
+	
+	&--narrow {
+		margin: 0 auto;
+		
+		@include media($medium) {
+			max-width: 70%;
+		}
+		
+		@include media($large-up) {
+			max-width: 50%;
+		}
 	}
 }

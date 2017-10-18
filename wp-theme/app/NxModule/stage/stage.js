@@ -1,11 +1,16 @@
 (function() {
 
+    var onComplete = function() {
+        $('.typed-cursor').hide();
+    };
+
     var options = {
         stringsElement: '#js-subheadings',
         typeSpeed: 60,
         loop: true,
         loopCount: 1,
-        backDelay: 2000
+        backDelay: 1000,
+        onComplete: onComplete
     };
 
     if($('#js-subheadings').length > 0) {

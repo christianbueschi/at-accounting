@@ -1,5 +1,25 @@
 .richtext {
 	
+	@include type-setting(-2);
+	
+	@include media($medium-up) {
+		@include type-setting(-1);
+	}
+	
+	p {
+		@include type-setting(-2);
+		margin-bottom: $spacing * 2;
+		
+		@include media($medium-up) {
+			@include type-setting(-1);
+			margin-bottom: $spacing * 3;
+		}
+		
+		&:empty {
+			margin-bottom: 0;
+		}
+	}
+	
 	a {
 		@extend .a-link;
 	}
@@ -7,5 +27,54 @@
 	strong {
 		font-family: $font-family-bold;
 		color: $grey;
+	}
+	
+	ul {
+		
+		li {
+			margin-left: $spacing * 3;
+			margin-bottom: $spacing / 2;
+			list-style: disc;
+			
+			@include media($medium-up) {
+				margin-bottom: $spacing;
+			}
+		}
+	}
+	
+	h2 {
+		@include type-setting(0);
+		margin-bottom: $spacing * 3;
+		
+		@include media($medium-up) {
+			@include type-setting(1);
+		}
+		
+	}
+	
+	h3 {
+		@include type-setting(-1);
+		margin: $spacing * 4 0 $spacing * 2 0;
+		
+		@include media($medium-up) {
+			@include type-setting(0);
+		}
+	}
+	
+	h4 {
+		@include type-setting(-1);
+		margin: $spacing * 4 0 $spacing * 2 0;
+		
+		@include media($medium-up) {
+			@include type-setting(0);
+		}
+	}
+	
+	
+	// Overwirte WordPress Styles
+	
+	.aligncenter {
+		display: block;
+		margin: 0 auto $spacing ;
 	}
 }

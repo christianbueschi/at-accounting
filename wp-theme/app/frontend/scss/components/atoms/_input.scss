@@ -7,6 +7,7 @@
 	border-radius: 5px;
 	padding: 0 $spacing;
 	border: 1px solid $grey-20;
+	max-width: 190px;
 	
 	-webkit-appearance: none;
 	
@@ -16,12 +17,21 @@
 	@include media($medium-up) {
 		line-height: 48px;
 		height: 48px;
-		min-width: 360px;
+		min-width: 100%;
+		
+		// Overwrite Mailchimp Style
+		.mc4wp-form & {
+			min-width: 360px;
+		}
 	}
 	
 	&:focus {
 		outline: none;
 		border-color: $sc-blue;
+	}
+	
+	&--hidden {
+		display: none;
 	}
 	
 }

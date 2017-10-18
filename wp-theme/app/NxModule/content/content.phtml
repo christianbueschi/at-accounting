@@ -4,6 +4,10 @@
 
 	<div class="o-content__left">
 
+	<?php else : ?>
+
+	<div class="o-content__one">
+
 	<?php endif; ?>
 
 		<?php if (have_rows('content_left_subpage')) : ?>
@@ -33,11 +37,8 @@
 		<?php endif; ?>
 
 
-	<?php if (get_sub_field('cols_subpage') == '2') : ?>
-
 	</div>
 
-	<?php endif; ?>
 
 	<?php if (have_rows('content_right_subpage')) : ?>
 

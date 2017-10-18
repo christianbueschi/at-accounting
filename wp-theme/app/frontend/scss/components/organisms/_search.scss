@@ -1,18 +1,27 @@
 .o-search {
-	display: none;
-	//position: absolute;
-	background: rgba(0,0,0,.5);
-	top: 0;
+	position: absolute;
+	background: rgba(255,255,255, .6);
+	top: -$header-height-s;
 	left: 0;
 	width: 100%;
-	height: $header-height-s;
+	transition: $transition;
+	
+	@include media($medium-up) {
+		padding: 0 $spacing * 2;
+	}
+	
+	@include media($large-up) {
+		top: -$header-height-l;
+	}
 	
 	.is-search-open & {
-		display: block;
+		top: 0;
 	}
 	
 	&__inner {
-	
+		@extend .l-container;
+		padding: 0 $spacing * 2;
+		position: relative; // close relative
 	}
 	
 	&__form {
@@ -20,10 +29,57 @@
 	}
 	
 	&__input {
-	
+		font-family: $font-family;
+		@include type-setting(-1);
+		height: $header-height-s;
+		width: 100%;
+		border: none;
+		background-color: transparent;
+		color: white;
+		
+		&::placeholder {
+			color: white;
+		}
+		
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			display: none;
+		}
+		
+		&:focus {
+			outline: 0;
+		}
+		
+		@include media($large-up) {
+			height: $header-height-l;
+		}
 	}
 	
 	&__button {
-	
+		&__close {
+			@include type-setting(0);
+			position: absolute;
+			right: $spacing * 5;
+			cursor: pointer;
+			top: 50%;
+			transform: translateY(-50%);
+			color: white;
+			
+			-webkit-appearance: none;
+			background-color: transparent;
+			border: none;
+			
+			@include media($medium-up) {
+				@include type-setting(0);
+				right: $spacing * 5;
+			}
+			
+			&:focus {
+				outline: none;
+			}
+		}
+		
 	}
 }

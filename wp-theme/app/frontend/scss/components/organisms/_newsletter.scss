@@ -1,0 +1,21 @@
+.o-newsletter {
+	
+	&__lists {
+		@include type-setting(-2);
+		margin-top: $spacing;
+		
+		.o-footer__newsletter & {
+			color: white;
+		}
+		
+		&__list {
+		
+		}
+		
+		&__label {
+			position: relative;
+			@extend .a-checkbox;
+			margin-right: $spacing;
+		}
+	}
+}

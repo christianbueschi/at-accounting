@@ -100,7 +100,7 @@ $nav-width: 250px;
 
 
 // Transitions
-$transition-speed: .25s;
+$transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);
 
 
 ////////////////////////////////////////////////////////////

@@ -10,15 +10,7 @@
 	
 	&__list {
 		margin: 0 auto;
-		
-		@include media($medium) {
-			width: 80%;
-		}
-		
-		@include media($large-up) {
-			width: 60%;
-		}
-	
+		@extend .l-container--narrow;
 	}
 	
 	&__item {
@@ -50,7 +42,7 @@
 				content: '';
 				position: absolute;
 				top: 50%;
-				transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+				transition: $transition;
 				border-radius: 3px;
 				background: $grey-60;
 				width: 20px;

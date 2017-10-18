@@ -1,35 +1,24 @@
 .o-content {
-	
 	@include background-light();
+	@extend .richtext;
 	
 	&__inner {
 		@extend .l-container;
+	}
+	
+	&__one {
+		@extend .l-container--narrow;
 	}
 	
 	&__left {
 		@include media($medium-up) {
 			@include span-columns(6);
 		}
-		
 	}
 	
 	&__right {
 		@include media($medium-up) {
 			@include span-columns(6);
-		}
-	}
-	
-	p {
-		@include type-setting(-2);
-		margin-bottom: $spacing * 2;
-		
-		@include media($medium-up) {
-			@include type-setting(-1);
-			margin-bottom: $spacing * 3;
-		}
-		
-		&:empty {
-			margin-bottom: 0;
 		}
 	}
 	

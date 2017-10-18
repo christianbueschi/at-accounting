@@ -20,10 +20,9 @@
 
 		</div>
 
-		<div class="o-footer__section">
+		<div class="o-footer__section o-footer__newsletter">
 			<h5 class="o-footer__section__title">Newsletter</h5>
-			<input class="a-input" type="text" placeholder="E-Mail">
-			<button class="a-button a-button--outline">Subscribe</button>
+			<?= do_shortcode(get_field('newsletter_footer_shortcode', 'options')); ?>
 		</div>
 
 		<div class="o-footer__section">

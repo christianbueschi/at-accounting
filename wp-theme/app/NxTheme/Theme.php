@@ -109,10 +109,10 @@ class Theme {
 	}
 
 	protected static function postTypes() {
-		new \NxTheme\PostType\Features();
+		/*new \NxTheme\PostType\Features();
 		new \NxTheme\PostType\TopFeatures();
 		new \NxTheme\PostType\FAQ();
-		new \NxTheme\PostType\ReleaseNotes();
+		new \NxTheme\PostType\ReleaseNotes();*/
 	}
 
 	protected static function taxonomies() {

@@ -3,4 +3,13 @@
 	font-style: italic;
 	color: white;
 	text-decoration: none;
+	visibility: visible;
+	opacity: 1;
+	
+	transition: $transition;
+	
+	.is-search-open & {
+		visibility: hidden;
+		opacity: 0;
+	}
 }

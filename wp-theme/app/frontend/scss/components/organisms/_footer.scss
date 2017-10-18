@@ -3,10 +3,13 @@
 	&__outer {
 		background-size: cover;
 		position: relative; // image relative
-		padding: $spacing * 2;
 		
 		&:before {
 			@include background-dark();
+		}
+		
+		@include media($medium-up) {
+			padding: $spacing * 2;
 		}
 	}
 	
@@ -122,6 +125,13 @@
 		}
 	}
 	
+	&__newsletter {
+		
+		.a-button {
+			@extend .a-button--outline;
+		}
+	}
+	
 	&__awards {
 		
 		&__item {
@@ -186,6 +196,17 @@
 		
 		&__link {
 			display: block;
+		}
+	}
+	
+	// Mailchimp Styles
+	.mc4wp-alert {
+		@include type-setting(-2);
+		margin-top: $spacing;
+		color: $red-interaction;
+		
+		&.mc4wp-success {
+			color: $green-interaction;
 		}
 	}
 }

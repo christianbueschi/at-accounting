@@ -75,7 +75,7 @@ class Filters
 	{
 
 		// Add "richtext" aka "base" aka "text" class to tiny mce
-		$opts['body_class'] = 'o-article__content';
+		$opts['body_class'] = 'richtext';
 
 		// Define Styles in Dropdown
 		$opts['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3';
