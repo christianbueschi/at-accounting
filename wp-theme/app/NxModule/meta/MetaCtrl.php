@@ -1,8 +1,8 @@
 <?php
 
-namespace NxModule\article;
+namespace NxModule\meta;
 
-class ArticleCtrl {
+class MetaCtrl {
 
 	/**
 	 * Define default args for the controller
@@ -42,9 +42,15 @@ class ArticleCtrl {
 		$viewData = self::$DEFAULT_VIEW_VARS;
 
 		// View Data
-		$viewData['post_id'] = get_the_ID();
+		$id = get_the_ID();
+
+		$viewData['post_id'] = $id;
 		$viewData['title'] = get_the_title();
-		$viewData['content'] = get_the_content();
+		$viewData['date'] = get_the_date();
+		$viewData['author'] = get_the_author();
+
+		// Categories
+		$viewData['category_link_list'] = \NxTheme\Helpers::getCategoryLinkList($id);
 
 		return $viewData;
 	}

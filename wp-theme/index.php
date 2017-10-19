@@ -13,19 +13,19 @@
 
 get_header(); ?>
 
-<!--STAGE-->
-
 <?php
 
 $title = get_the_title(get_option('page_for_posts', true));
-$backgroundImage = get_the_post_thumbnail_url(get_option('page_for_posts', true));
+$backgroundImageBlog = get_the_post_thumbnail_url(get_option('page_for_posts', true));
+
 ?>
+
 
 <?=
 module('stage')
 	->tag('section')
 	->classes('o-stage--small')
-	->ctrl(array('Title' => $title, 'BackgroundImage' => $backgroundImage)); ?>
+	->ctrl(array('Title' => $title, 'BackgroundImage' => $backgroundImageBlog)) ?>
 
 
 <?=

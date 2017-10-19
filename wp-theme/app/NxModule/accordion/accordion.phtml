@@ -1,5 +1,9 @@
 <div class="o-accordion__inner">
 
+	<?php if($data->title) : ?>
+		<h3 class="o-accordion__title"><?= $data->title ?></h3>
+	<?php endif; ?>
+
 	<?php if (have_rows('accordion_item')): ?>
 
 		<ul class="o-accordion__list">

@@ -43,7 +43,7 @@ class AccordionCtrl {
 
 		// View Data
 		$viewData['post_id'] = get_the_ID();
-		$viewData['content'] = (get_sub_field('info_content') ? get_sub_field('info_content') : get_sub_field('subline_subpage_text'));
+		$viewData['title'] = get_sub_field('accordion_title');
 
 		return $viewData;
 	}

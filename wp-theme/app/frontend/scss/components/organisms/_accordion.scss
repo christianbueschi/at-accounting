@@ -13,6 +13,18 @@
 		@extend .l-container--narrow;
 	}
 	
+	&__title {
+		@include type-setting(0);
+		@extend .l-container--narrow;
+		text-align: center;
+		margin-bottom: $spacing * 2;
+		
+		@include media($large-up) {
+			@include type-setting(1);
+			margin-bottom: $spacing * 6;
+		}
+	}
+	
 	&__item {
 		margin-bottom: $spacing * 2;
 		
@@ -26,6 +38,18 @@
 			
 			@include media($large-up) {
 				@include type-setting(0);
+			}
+			
+			&:hover {
+				cursor: pointer;
+				color: $grey;
+				
+				span {
+					&:before,
+					&:after {
+						background: $grey
+					}
+				}
 			}
 		}
 		
@@ -75,21 +99,44 @@
 		
 		&__body {
 			@include type-setting(-2);
+			@extend .richtext;
 			display: none;
 			margin-top: $spacing;
+			overflow-x: auto;
+			padding-right: calc(#{$chevronWidth} + #{$spacing} * 2);
 			
-			@extend .richtext;
-			
-			// overwrite richtext styles
-			> h2,
-			h3 {
-				font-family: $font-family-bold;
-				color: $grey;
-				margin-bottom: $spacing;
+			@include media($medium-up) {
+				overflow: visible;
 			}
 			
 			@include media($large-up) {
 				@include type-setting(-1);
+			}
+			
+			// overwrite richtext styles
+			h2,
+			h3 {
+				@include type-setting(-1);
+				font-family: $font-family-bold;
+				color: $grey;
+				margin-top: 0;
+				margin-bottom: $spacing;
+			}
+			
+			h4,
+			h5 {
+				@include type-setting(-2);
+				font-family: $font-family-bold;
+			}
+			
+			h6 {
+				font-size: 1.5rem;
+				font-family: $font-family-bold;
+				margin-bottom: $spacing;
+			}
+			
+			p {
+				//margin-bottom: 0;
 			}
 		}
 	}

@@ -47,9 +47,20 @@ class StageCtrl {
 		$viewData['tagline'] = get_sub_field('stage_landing_tagline');
 		$viewData['cta'] = get_sub_field('stage_landing_cta');
 		$viewData['cta_link'] = get_sub_field('stage_landing_cta_link');
-		$viewData['background_image'] = (get_sub_field('stage_landing_background_image') ? get_sub_field('stage_landing_background_image') : get_sub_field('stage_sub_background_image') );
 
-		$viewData['background_image'] = (!$viewData['background_image']) ? $ctrlArgs['BackgroundImage'] : $viewData['background_image']['url'];
+		$backgroundImageLanding = get_sub_field('stage_landing_background_image');
+		$backgroundImageSub = get_sub_field('stage_sub_background_image');
+
+
+		if($backgroundImageLanding) {
+			$viewData['background_image'] = $backgroundImageLanding['url'];
+		} else if($backgroundImageSub) {
+			$viewData['background_image'] = $backgroundImageSub['url'];
+		} else if($ctrlArgs && $ctrlArgs['BackgroundImage']) {
+			$viewData['background_image'] = $ctrlArgs['BackgroundImage'];
+		}
+
+		$viewData['background_color'] = get_sub_field('stage_sub_background_color');
 
 		$viewData['product_image'] = get_sub_field('stage_landing_product_image');
 

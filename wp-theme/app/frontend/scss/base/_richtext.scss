@@ -30,6 +30,7 @@
 	}
 	
 	ul {
+		margin-bottom: $spacing;
 		
 		li {
 			margin-left: $spacing * 3;
@@ -38,6 +39,22 @@
 			
 			@include media($medium-up) {
 				margin-bottom: $spacing;
+			}
+			
+			ul {
+				margin-top: $spacing;
+				
+				li {
+					list-style: circle;
+					
+					ul {
+						li {
+							list-style: square;
+							margin-top: 0;
+						}
+					}
+					
+				}
 			}
 		}
 	}
@@ -68,6 +85,41 @@
 		@include media($medium-up) {
 			@include type-setting(0);
 		}
+	}
+	
+	table {
+		width: auto;
+		margin: $spacing * 2 0;
+		
+		@include media($medium-up) {
+			margin-left: -20%;
+			margin-right: -20%;
+		}
+		
+		@include media($large-up) {
+			margin-left: -20%;
+			margin-right: -20%;
+		}
+		
+		tr {
+			border-bottom: 1px solid $grey-20;
+		
+		}
+		
+		th {
+			font-family: $font-family-bold;
+			padding: $spacing $spacing / 2 $spacing $spacing / 2;
+		}
+		
+		td {
+			padding: $spacing;
+			@include type-setting(-2);
+		}
+	}
+	
+	code {
+		@include type-setting(-2);
+		font-family: Monaco, "Andale Mono", "Courier New", Courier, monospace;
 	}
 	
 	

@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-	<? while (have_posts()) : the_post(); ?>
+<? while (have_posts()) : the_post(); ?>
 
 	<?php if (have_rows('flexible_content_sub')): ?>
 
@@ -105,6 +105,6 @@ get_header();
 
 	<?php endif; ?>
 
-	<? endwhile; ?>
+<? endwhile; ?>
 
 <? get_footer(); ?>

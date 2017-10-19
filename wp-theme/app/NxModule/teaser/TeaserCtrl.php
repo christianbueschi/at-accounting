@@ -42,20 +42,14 @@ class TeaserCtrl {
 		$viewData = self::$DEFAULT_VIEW_VARS;
 
 		// View Data
-		$viewData['title'] = get_the_title(get_the_ID());
+		$id = get_the_ID();
+		$viewData['id'] = $id;
+		$viewData['title'] = get_the_title($id);
 		$viewData['date'] = get_the_date();
-		$viewData['permalink'] = get_permalink(get_the_ID());
-
-		// Excerpt length: use this instead of the excerpt length filter. The filter only work when
-		// a post has an excerpt. When there is no excerpt and the content is used instead, the filter does not work
-		$viewData['excerpt'] = wp_trim_words(get_the_excerpt(), 24);
-
+		$viewData['permalink'] = get_permalink($id);
 
 		// Categories
-		$viewData['category_link_list'] = \NxTheme\Helpers::getCategoryLinkList(get_the_ID());
-
-		// Images
-		$viewData['thumbnail_url'] = get_the_post_thumbnail_url();
+		$viewData['category_link_list'] = \NxTheme\Helpers::getCategoryLinkList($id);
 
 		return $viewData;
 	}
