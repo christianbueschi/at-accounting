@@ -25,7 +25,7 @@ $backgroundImageBlog = get_the_post_thumbnail_url(get_option('page_for_posts', t
 module('stage')
 	->tag('section')
 	->classes('o-stage--small')
-	->ctrl(array('Title' => $title, 'BackgroundImage' => $backgroundImageBlog)) ?>
+	->ctrl(array('Title' => $title, 'BackgroundImage' => $backgroundImageBlog['url'])) ?>
 
 
 <?=

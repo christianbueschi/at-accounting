@@ -36,6 +36,18 @@
 		margin: 0 auto;
 		
 		@include media($medium) {
+			max-width: 80%;
+		}
+		
+		@include media($large-up) {
+			max-width: 70%;
+		}
+	}
+	
+	&--ultranarrow {
+		margin: 0 auto;
+		
+		@include media($medium) {
 			max-width: 70%;
 		}
 		

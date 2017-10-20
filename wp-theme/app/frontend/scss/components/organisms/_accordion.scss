@@ -10,12 +10,12 @@
 	
 	&__list {
 		margin: 0 auto;
-		@extend .l-container--narrow;
+		@extend .l-container--ultranarrow;
 	}
 	
 	&__title {
 		@include type-setting(0);
-		@extend .l-container--narrow;
+		@extend .l-container--ultranarrow;
 		text-align: center;
 		margin-bottom: $spacing * 2;
 		

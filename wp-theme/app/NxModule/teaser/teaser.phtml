@@ -1,64 +1,65 @@
-<?php if (have_rows('flexible_content_sub')): ?>
-
-	<article>
-		<header>
-
-			<?php while (have_rows('flexible_content_sub')): the_row(); ?>
-
-				<?php if (get_row_layout() === 'stage_subpage') : ?>
-
-					<?php
-
-					$image = get_sub_field('stage_sub_background_image');
-					$background_color = get_sub_field('stage_sub_background_color');
-
-					?>
-
-					<a href="<?= $data->permalink ?>" class="o-teaser__link">
-						<figure class="o-teaser__figure" style="background-color: <?= $background_color ?>"
-						">
-						<img src="<?= $image['url'] ?>" alt="" class="o-teaser__figure__image">
-						</figure>
-						<div class="o-teaser__figure__span">
-							<div class="o-teaser__figure__span__inner">
-								<h2 class="o-teaser__title"><?= $data->title ?></h2>
-							</div>
-						</div>
-					</a>
-
-				<?php endif; ?>
-
-
-			<?php endwhile; ?>
-			<div class="o-teaser__meta">
-				<span class="o-teaser__meta__date"><?= $data->date ?></span>
-				<span class="o-teaser__meta__categories"><?= $data->category_link_list ?></span>
-			</div>
-		</header>
+<article>
+	<header>
 
 		<?php while (have_rows('flexible_content_sub')): the_row(); ?>
 
-			<?php if (get_row_layout() === 'content_subpage') : ?>
+			<?php if (get_row_layout() === 'stage_subpage') : ?>
 
-				<?php while (have_rows('content_left_subpage')): the_row(); ?>
+				<?php
 
-					<?php if (get_sub_field('content_text')) : ?>
+				$image = get_sub_field('stage_sub_background_image');
+				$background_color = get_sub_field('stage_sub_background_color');
 
-						<div class="o-teaser__copy">
-							<?= wp_trim_words(get_sub_field('content_text'), 24) ?>
+				?>
+
+				<a href="<?= $data->permalink ?>" class="o-teaser__link">
+					<figure class="o-teaser__figure" style="background-color: <?= $background_color ?>"
+					">
+					<img src="<?= $image['sizes']['large'] ?>" alt="" class="o-teaser__figure__image">
+					</figure>
+					<div class="o-teaser__figure__span">
+						<div class="o-teaser__figure__span__inner">
+							<h2 class="o-teaser__title"><?= $data->title ?></h2>
 						</div>
-
-					<?php endif; ?>
-
-
-				<?php endwhile; ?>
+					</div>
+				</a>
 
 			<?php endif; ?>
 
 
 		<?php endwhile; ?>
+		<div class="o-teaser__meta">
+			<span class="o-teaser__meta__date"><?= $data->date ?></span>
+			<span class="o-teaser__meta__categories"><?= $data->category_link_list ?></span>
+		</div>
+	</header>
 
-	</article>
+	<?php $count = 0; ?>
+	<?php while (have_rows('flexible_content_sub')): the_row(); ?>
 
 
-<?php endif; ?>
+		<?php if (get_row_layout() === 'content_subpage' && $count == 0) : ?>
+
+			<?php $count = 1; ?>
+
+			<?php while (have_rows('content_left_subpage')): the_row(); ?>
+
+				<?php if (get_sub_field('content_text')) : ?>
+
+					<div class="o-teaser__copy">
+						<?= wp_trim_words(get_sub_field('content_text'), 24) ?>
+					</div>
+
+				<?php endif; ?>
+
+
+			<?php endwhile; ?>
+
+		<?php endif; ?>
+
+
+	<?php endwhile; ?>
+
+</article>
+
+

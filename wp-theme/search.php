@@ -7,13 +7,22 @@
 
 get_header(); ?>
 
-<div class="page-centered">
+<?php
 
-	<?= module('teaserlistheader')->ctrl(); ?>
+$title = get_field('search_title', 'options');
+$backgroundImageSearch = get_field('search_background_image', 'options');
 
-	<?= module('teaserlist')->ctrl(); ?>
+?>
 
-	<?= module('teaserlistfooter'); ?>
-</div>
+
+<?=
+module('stage')
+	->tag('section')
+	->classes('o-stage--small')
+	->ctrl(array('Title' => $title, 'BackgroundImage' => $backgroundImageSearch['url'])) ?>
+
+
+<?= module('teaserlist')->ctrl(); ?>
+
 
 <? get_footer(); ?>
