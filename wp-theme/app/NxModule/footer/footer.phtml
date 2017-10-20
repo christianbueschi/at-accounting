@@ -39,7 +39,7 @@
 						<?php $image = get_sub_field('award_image'); ?>
 
 						<li class="o-footer__awards__item">
-							<img src="<?= $image['url'] ?>" alt="" class="o-footer__awards__item__image">
+							<img src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>" class="o-footer__awards__item__image">
 						</li>
 
 					<?php endwhile; ?>
@@ -73,8 +73,8 @@
 		</div>
 
 		<div class="o-footer__section">
-			<a class="o-footer__brand__image__link" href="<?= $data->brand_link ?>" target="_blank">
-				<img class="o-footer__brand__image" src="<?= $data->brand_image ?>" alt="">
+			<a class="o-footer__brand__image__link" href="<?= $data->brand_link ?>" title="Swisscom AG" target="_blank">
+				<img class="o-footer__brand__image" src="<?= $data->brand_image ?>" alt="Swisscom Brand Logo">
 			</a>
 		</div>
 	</div>

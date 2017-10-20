@@ -17,7 +17,7 @@
 		</div>
 		<?php if ($data->product_image) : ?>
 			<div class="o-stage__image__outer">
-				<img class="o-stage__image" src="<?= $data->product_image['url']; ?>" alt="">
+				<img class="o-stage__image" src="<?= $data->product_image['url']; ?>" alt="<?= $data->product_image['alt']; ?>">
 				<div class="o-stage__cta o-stage__cta--largescreen">
 					<p class="o-stage__cta__tagline"><?= $data->tagline; ?></p>
 					<div class="o-stage__cta__button__outer">

@@ -9,13 +9,14 @@
 
 				$image = get_sub_field('stage_sub_background_image');
 				$background_color = get_sub_field('stage_sub_background_color');
+				$imageAlt = ($image['alt'] ? $image['alt'] : 'Teaser Image');
 
 				?>
 
 				<a href="<?= $data->permalink ?>" class="o-teaser__link">
 					<figure class="o-teaser__figure" style="background-color: <?= $background_color ?>"
 					">
-					<img src="<?= $image['sizes']['large'] ?>" alt="" class="o-teaser__figure__image">
+					<img src="<?= $image['sizes']['large'] ?>" alt="<?= $imageAlt ?>" class="o-teaser__figure__image">
 					</figure>
 					<div class="o-teaser__figure__span">
 						<div class="o-teaser__figure__span__inner">
