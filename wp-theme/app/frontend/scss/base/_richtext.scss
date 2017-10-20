@@ -59,6 +59,20 @@
 		}
 	}
 	
+	ol {
+		margin-bottom: $spacing;
+		list-style: decimal;
+		
+		li {
+			margin-left: $spacing * 3;
+			margin-bottom: $spacing / 2;
+			
+			@include media($medium-up) {
+				margin-bottom: $spacing;
+			}
+		}
+	}
+	
 	h2 {
 		@include type-setting(0);
 		margin-bottom: $spacing * 3;

@@ -15,7 +15,18 @@
 		&__label {
 			position: relative;
 			@extend .a-checkbox;
-			margin-right: $spacing;
+			
+			@include media($small) {
+				width: 50%;
+			}
+			
+			@include media($medium-up) {
+				margin-right: $spacing;
+				
+				&:last-child {
+					margin-right: 0;
+				}
+			}
 		}
 	}
 }

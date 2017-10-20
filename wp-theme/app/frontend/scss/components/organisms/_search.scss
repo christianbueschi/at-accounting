@@ -63,11 +63,12 @@
 		&__close {
 			@include type-setting(0);
 			position: absolute;
-			right: $spacing * 5;
+			right: $spacing * 6;
 			cursor: pointer;
 			top: 50%;
 			transform: translateY(-50%);
 			color: white;
+			padding: 0;
 			
 			-webkit-appearance: none;
 			background-color: transparent;
@@ -75,7 +76,6 @@
 			
 			@include media($medium-up) {
 				@include type-setting(0);
-				right: $spacing * 5;
 			}
 			
 			&:focus {

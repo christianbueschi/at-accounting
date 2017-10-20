@@ -28,6 +28,8 @@
 		margin: 0 auto $spacing*2 auto;
 	
 		&__outer {
+			background: url('../images/screenFrame.png') no-repeat;
+			background-size: contain;
 			@include media($medium-up) {
 				@include span-columns(6);
 			}

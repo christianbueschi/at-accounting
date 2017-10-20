@@ -7,7 +7,7 @@
 	border-radius: 5px;
 	padding: 0 $spacing;
 	border: 1px solid $grey-20;
-	max-width: 190px;
+	width: 100%;
 	
 	-webkit-appearance: none;
 	
@@ -17,12 +17,6 @@
 	@include media($medium-up) {
 		line-height: 48px;
 		height: 48px;
-		min-width: 100%;
-		
-		// Overwrite Mailchimp Style
-		.mc4wp-form & {
-			min-width: 360px;
-		}
 	}
 	
 	&:focus {
@@ -32,6 +26,29 @@
 	
 	&--hidden {
 		display: none;
+	}
+	
+	// Overwrite Ninja Form Styles
+	
+	&[type="email"] {
+		
+		.mc4wp-form & {
+			max-width: calc(100% - #{$spacing} - 125px);
+			width: calc(100% - #{$spacing} - 125px);
+			margin-right: $spacing;
+			
+			@include media($medium-up) {
+				max-width: calc(100% - #{$spacing} - 165px);
+				width: calc(100% - #{$spacing} - 165px);
+			}
+			
+			.o-footer & {
+				@include media($medium-up) {
+					max-width: 400px;
+				}
+			}
+		}
+		
 	}
 	
 }

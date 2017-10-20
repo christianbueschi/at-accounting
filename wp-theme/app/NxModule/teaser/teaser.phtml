@@ -16,7 +16,9 @@
 				<a href="<?= $data->permalink ?>" class="o-teaser__link">
 					<figure class="o-teaser__figure" style="background-color: <?= $background_color ?>"
 					">
-					<img src="<?= $image['sizes']['large'] ?>" alt="<?= $imageAlt ?>" class="o-teaser__figure__image">
+					<?php if($image) : ?>
+						<img src="<?= $image['sizes']['large'] ?>" alt="<?= $imageAlt ?>" class="o-teaser__figure__image">
+					<?php endif; ?>
 					</figure>
 					<div class="o-teaser__figure__span">
 						<div class="o-teaser__figure__span__inner">

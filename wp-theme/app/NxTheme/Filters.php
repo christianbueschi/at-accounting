@@ -174,28 +174,29 @@ class Filters
 				'block' => 'span',
 				'classes' => 'a-title__icon a-title__icon--checkmark',
 				'wrapper' => true,
-
 			),
 			array(
 				'title' => 'Icon Exclamationmark',
 				'block' => 'span',
 				'classes' => 'a-title__icon a-title__icon--exclamationmark',
 				'wrapper' => true,
-
 			),
 			array(
 				'title' => 'Icon Fire',
 				'block' => 'span',
 				'classes' => 'a-title__icon a-title__icon--fire',
 				'wrapper' => true,
-
 			),
 			array(
 				'title' => 'Icon Flash',
 				'block' => 'span',
 				'classes' => 'a-title__icon a-title__icon--flash',
 				'wrapper' => true,
-
+			),
+			array(
+				'title' => 'Primary Button',
+				'selector' => 'a',
+				'classes' => 'a-button',
 			),
 		);
 		// Insert the array, JSON ENCODED, into 'style_formats'
@@ -203,6 +204,17 @@ class Filters
 
 		return $init_array;
 
+	}
+
+	/*
+	 * Filter to remove WYSIWYG Editor on Posts and Pages
+	 */
+	public static function init_remove_support(){
+		$post_type = 'post';
+		remove_post_type_support( $post_type, 'editor');
+
+		$post_type = 'page';
+		remove_post_type_support( $post_type, 'editor');
 	}
 
 }

@@ -52,6 +52,18 @@ get_header();
 
 			<?php endif; ?>
 
+			<!--SEPARATOR-->
+
+			<?php if (get_row_layout() === 'separator_subpage') : ?>
+
+				<?=
+				module('separator')
+					->tag('section')
+					->ctrl(); ?>
+
+
+			<?php endif; ?>
+
 			<!--DOWNLOADS-->
 
 			<?php if (get_row_layout() === 'download_list_subpage') : ?>

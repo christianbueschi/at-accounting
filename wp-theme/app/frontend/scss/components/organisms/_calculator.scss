@@ -27,13 +27,22 @@
 	
 	// overwrite plugin styles
 	.license-calculator__price {
-		@include type-setting(0);
 		color: $sc-blue;
+		
+		@include type-setting(0);
+		@include media($medium-up) {
+		}
 	}
 	
 	.license-calculator__label {
-		display: inline;
 		@include type-setting(-2);
 		color: $grey;
+		
+		display: block;
+		
+		@include media($medium-up) {
+			display: inline;
+			
+		}
 	}
 }

@@ -1,0 +1,12 @@
+.o-separator {
+	@include background-light();
+	
+	&__inner {
+		@extend .l-container;
+	}
+	
+	&__copy {
+		@extend .l-container--narrow;
+		text-align: center;
+	}
+}

@@ -1,6 +1,7 @@
 .a-button {
 	
 	@include type-setting(-2);
+	@include ellipsis(100%);
 	font-family: $font-family;
 	background-color: $blue-interaction;
 	border: none;
@@ -10,7 +11,7 @@
 	text-decoration: none;
 	display: inline-block;
 	border-radius: 5px;
-	padding: 0;
+	padding: 0 $spacing;
 	
 	-webkit-appearance: none;
 	
@@ -20,7 +21,6 @@
 		line-height: 48px;
 		min-width: 160px;
 	}
-	
 	
 	&:hover {
 		cursor: pointer;
@@ -39,6 +39,22 @@
 			background-color: transparent;
 		}
 	}
+	
+	&:active {
+		transform: scale(.95);
+	}
 
+	
+	.o-separator & {
+		margin-top: $spacing;
+	}
+	
+	// Overwrite Ninja Form Styles
+	
+	.mc4wp-form & {
+		@include media($medium-up) {
+			max-width: 160px;
+		}
+	}
 
 }

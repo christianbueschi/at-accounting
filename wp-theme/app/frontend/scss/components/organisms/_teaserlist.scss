@@ -11,7 +11,7 @@
 	&__item {
 		background-color: white;
 		margin-bottom: $spacing * 2;
-		min-height: 420px;
+		min-height: 435px;
 		
 		@include media($medium) {
 			@include span-columns(6);
