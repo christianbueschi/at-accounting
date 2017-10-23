@@ -20,8 +20,12 @@
 		<title><?php wp_title('|', true, 'right'); ?></title>
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-		<link rel="shortcut icon" type="image/x-icon" href="<?=ASSETS_URL?>/img/favicon.ico"/>
-		<link rel="apple-touch-icon" href="<?=ASSETS_URL?>/img/apple-touch-icon.png"/>
+		<link rel="icon" type="image/png" sizes="32x32" href="<?=ASSETS_URL?>/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="<?=ASSETS_URL?>/images/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="<?=ASSETS_URL?>/images/favicon-16x16.png">
+		<link rel="shortcut icon" type="image/x-icon" href="<?=ASSETS_URL?>/images/favicon.ico"/>
+		<link rel="apple-touch-icon" href="<?=ASSETS_URL?>/images/apple-icon.png"/>
+
 
 		<?php wp_head(); ?>
 
@@ -45,7 +49,7 @@
 
 	</head>
 
-	<body <?php body_class(); ?>>
+	<body>
 
 		<?= module('nav')
 			->tag('nav')
@@ -59,4 +63,4 @@
 			->attrib('role', 'banner')
 			->ctrl() ?>
 
-		<main id="content" role="main" class="page-centered">
+		<main id="content" role="main">

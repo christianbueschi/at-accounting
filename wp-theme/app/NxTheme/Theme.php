@@ -138,28 +138,19 @@ class Theme {
 	protected static function filters() {
 
 		add_filter('wp_title',		array('\NxTheme\Filters', 'wp_title'), 10, 2 );
-
 		add_filter('body_class',	array('\NxTheme\Filters', 'theme_body_classes') );
-
 		add_filter('tiny_mce_before_init', array('\NxTheme\Filters', 'tiny_mce_before_init'));
-
 		add_filter('excerpt_more', array('\NxTheme\Filters', 'excerpt_more'));
-
 		add_filter('img_caption_shortcode', array('\NxTheme\Filters', 'custom_caption'), 10, 3);
-
 		add_filter('mce_buttons_2', array('\NxTheme\Filters', 'editor_buttons'), 10, 3);
-
 		add_filter( 'tiny_mce_before_init', array('\NxTheme\Filters', 'my_mce_before_init_insert_formats' ), 10, 3);
-
 		add_filter( 'init', array('\NxTheme\Filters', 'init_remove_support' ), 10, 3);
 	}
 
 	protected static function actions() {
 
 		add_action('wp_enqueue_scripts', array('\NxTheme\Actions', 'wp_enqueue_scripts'));
-
 		add_action('admin_enqueue_scripts', array('\NxTheme\Actions', 'admin_enqueue_scripts'));
-
 		add_action('pre_get_posts', array('\NxTheme\Actions', 'pre_get_posts'));
 
 		// Additional User Fields

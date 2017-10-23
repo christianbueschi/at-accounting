@@ -12,8 +12,6 @@
 			<?=
 			module('footer')
 				->tag('footer')
-				->classes('page-centered box-content')
-				->attrib('role', 'contentinfo')
 				->ctrl(); ?>
 
 			<?php wp_footer(); ?>
