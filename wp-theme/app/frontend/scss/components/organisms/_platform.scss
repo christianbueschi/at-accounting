@@ -3,7 +3,6 @@
 	&__outer {
 		background-size: cover;
 		background-position: center center;
-		padding: 2rem;
 		position: relative; // image relative
 		
 		&:before {
@@ -17,11 +16,13 @@
 	
 	&__title {
 		@extend .a-title;
+		@extend .l-container--narrow;
 		color: white;
 	}
 	
 	&__text {
 		@include type-setting(-1);
+		@extend .l-container--narrow;
 		text-align: center;
 		color: white;
 		margin-bottom: $spacing * 2;
