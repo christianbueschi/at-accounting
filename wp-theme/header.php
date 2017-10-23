@@ -27,6 +27,9 @@
 
 		<script>var assetsUrl = '<?=ASSETS_URL?>';</script>
 
+		<!--Fancy Box-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css" />
+
 		<!-- Open Graph !-->
 		<?= partial('opengraph') ?>
 
