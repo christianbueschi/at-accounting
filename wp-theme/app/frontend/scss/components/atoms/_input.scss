@@ -33,8 +33,8 @@
 	&[type="email"] {
 		
 		.mc4wp-form & {
-			max-width: calc(100% - #{$spacing} - 125px);
-			width: calc(100% - #{$spacing} - 125px);
+			max-width: calc(100% - #{$spacing} - 130px);
+			width: calc(100% - #{$spacing} - 130px);
 			margin-right: $spacing;
 			
 			@include media($medium-up) {
