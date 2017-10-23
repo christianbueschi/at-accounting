@@ -1,9 +1,11 @@
 .o-header {
 	
-	position: absolute;
+	position: fixed;
+	z-index: 999;
 	width: 100%;
 	height: $header-height-s;
-	z-index: 1;
+	
+	transition: $transition;
 	
 	@include media($medium-up) {
 		padding: 0 2rem;
@@ -11,6 +13,13 @@
 	
 	@include media($large-up) {
 		height: $header-height-l;
+	}
+	
+	.is-sticky-header & {
+		//background-color: rgba(0,0,0,.8);
+		@include background-superdark();
+		position: fixed;
+		//height: $header-height-s--sticky;
 	}
 	
 	&__inner {

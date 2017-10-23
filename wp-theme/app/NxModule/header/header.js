@@ -22,7 +22,17 @@
         }
     };
 
+    var onScrollBody = function() {
+        if(window.pageYOffset > 50) {
+            $body.addClass('is-sticky-header');
+        }  else {
+            $body.removeClass('is-sticky-header');
+        }
+    };
+
     $nav.on('click', onClickNav);
     $search.on('click', onClickSearch);
+
+    $(window).on('scroll', onScrollBody)
 
 })();

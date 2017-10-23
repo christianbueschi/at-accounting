@@ -22,23 +22,6 @@
 		}
 	}
 	
-	&__figure {
-		margin-bottom: $spacing * 2;
-		
-		@include media($medium-up) {
-			margin-bottom: $spacing * 3;
-		}
-		
-		&__img {
-			margin-bottom: $spacing;
-		}
-		
-		&__caption {
-			@include type-setting(-2);
-			font-style: italic;
-		}
-	}
-	
 	[data-fancybox]:focus {
 		outline: none;
 	}

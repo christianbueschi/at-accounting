@@ -3,7 +3,6 @@
 
     $(document).ready(function () {
 
-
         // Create Link Wrapper for FancyBox
 
         var $images = $('.o-content img');
@@ -21,6 +20,7 @@
                 'close'
             ]
         });
+
     })
 
 

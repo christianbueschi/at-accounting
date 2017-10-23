@@ -10,5 +10,15 @@
 	bottom: 0;
 	left: 0;
 	background-image: radial-gradient(ellipse at 63% 91%, rgba(17,170,255,0.2) 20%, rgba(0,0,0,.8) 93%);
-	//background-image: radial-gradient(ellipse at 53% 53%, rgba(102,102,102,0.5) 50%, rgba(0,0,0,0.9) 100%);
+}
+
+@mixin background-superdark() {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: radial-gradient(ellipse at 63% 91%, rgba(36, 59, 72, 0.6) 20%, rgba(0, 0, 0, 0.8) 93%)
+	
 }
