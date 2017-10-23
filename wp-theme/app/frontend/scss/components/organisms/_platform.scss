@@ -44,10 +44,23 @@
 	}
 	
 	&__logo {
-		@include span-columns(4);
+		display: block;
+		margin: 0 auto $spacing;
+		max-width: 200px;
 		
-		> img {
+		@include media($medium-up) {
+			display: inline-block;
+			max-width: 30%;
+			margin-right: $spacing * 2;
+			vertical-align: middle;
+			
+			&:last-child {
+				margin-right: 0;
+			}
+		}
 		
+		@include media($large-up) {
+			margin-right: $spacing * 4;
 		}
 	}
 }
