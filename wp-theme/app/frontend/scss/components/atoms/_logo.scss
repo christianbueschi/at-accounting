@@ -1,4 +1,5 @@
 .a-logo {
+	font-family: $font-family-serif;
 	@include type-setting(-1);
 	font-style: italic;
 	color: white;
