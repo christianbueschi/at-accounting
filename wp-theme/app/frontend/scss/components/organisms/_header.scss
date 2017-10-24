@@ -16,13 +16,14 @@
 	}
 	
 	.is-sticky-header & {
-		//background-color: rgba(0,0,0,.8);
-		@include background-superdark();
+		&:before {
+			@include background-superdark();
+		}
 		position: fixed;
-		//height: $header-height-s--sticky;
 	}
 	
 	&__inner {
+		position: relative;
 		@include outer-container();
 		padding: $spacing*2 ;
 		
