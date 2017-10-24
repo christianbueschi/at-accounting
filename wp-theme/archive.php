@@ -9,10 +9,24 @@
 
 get_header(); ?>
 
-	<?= module('teaserlistheader')->ctrl(); ?>
+<?php
 
-	<?= module('teaserlist')->ctrl(); ?>
+$title = get_the_archive_title();
+$backgroundImageBlog = get_the_post_thumbnail_url(get_option('page_for_posts', true));
 
-	<?= module('teaserlistfooter'); ?>
+
+?>
+
+
+<?=
+module('stage')
+	->tag('section')
+	->classes('o-stage--small')
+	->ctrl(array('Title' => $title, 'BackgroundImage' => $backgroundImageBlog)) ?>
+
+
+<?=
+module('teaserlist')
+	->ctrl(); ?>
 
 <? get_footer(); ?>
