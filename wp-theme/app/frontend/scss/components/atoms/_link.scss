@@ -1,8 +1,20 @@
 .a-link {
 	text-decoration: none;
-	color: $blue-interaction;
+	color: white;
+	
+	transition: color .25s ease-in-out;
 	
 	&:hover {
-		color: $blue-rollover;
+		color: $blue;
+	}
+	
+	&--copy {
+		color: $blue;
+		border-bottom: 1px solid $blue;
+		
+		&:hover {
+			color: $blue;
+			border-color: $blue;
+		}
 	}
 }

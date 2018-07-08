@@ -145,6 +145,8 @@ class Theme {
 		add_filter('mce_buttons_2', array('\NxTheme\Filters', 'editor_buttons'), 10, 3);
 		add_filter( 'tiny_mce_before_init', array('\NxTheme\Filters', 'my_mce_before_init_insert_formats' ), 10, 3);
 		add_filter( 'init', array('\NxTheme\Filters', 'init_remove_support' ), 10, 3);
+		add_filter( 'comment_form_fields', array('\NxTheme\Filters', 'wpb_move_comment_field_to_bottom' ), 10, 3);
+		add_filter( 'upload_mimes', array('\NxTheme\Filters', 'allow_svgimg_types' ), 10, 3);
 	}
 
 	protected static function actions() {
@@ -170,7 +172,8 @@ class Theme {
 		register_nav_menus(array(
 			'main-nav' => __('Main Menu', 'nxtheme'),
 			'footer-links' => __('Footer Links', 'nxtheme'),
-			'footer-social' => __('Footer Social Menu', 'nxtheme')
+			'footer-social' => __('Footer Social Menu', 'nxtheme'),
+			'footer-links-small' => __('Footer Links Small', 'nxtheme')
 		));
 	}
 

@@ -1,82 +1,26 @@
-<div class="o-footer__outer" style="background-image: url(<?= $data->background_image; ?>)">
+<div class="o-footer__inner">
+	<h4 class="o-footer__title">
+		<?= $data->title ?>
+	</h4>
 
-	<div class="o-footer__inner">
+	<address class="o-footer__address">
+		<?= $data->address ?>
+	</address>
 
+	<div class="o-footer__contact-wrapper">
+		<div class="o-footer__contact-wrapper__inner">
+			<a href="tel:<?= $data->mobilelink ?>" class="o-footer__tel">
+				<i class="icon-ios-telephone-outline"></i>
+				<?= $data->mobile ?>
+			</a>
 
-		<div class="o-footer__section">
-			<a class="o-footer__brand a-logo" href="/">Sharespace</a>
-
-			<ul class="o-footer__socials">
-				<?php foreach ($data->menu_social['items'] as $menu) : ?>
-
-					<li class="o-footer__socials__item">
-						<a href="<?= $menu->url ?>" title="<?= $menu->title ?>"
-						   class="o-footer__socials__item__link o-footer__socials__item__link--<?= $menu->title ?>">
-							<span class="o-footer__socials__item__link__inner h-vh"><?= $menu->title ?></span>
-						</a>
-					</li>
-				<?php endforeach; ?>
-			</ul>
-
-		</div>
-
-		<div class="o-footer__section o-footer__newsletter">
-			<h5 class="o-footer__section__title">Newsletter</h5>
-			<?= do_shortcode(get_field('newsletter_footer_shortcode', 'options')); ?>
-		</div>
-
-		<div class="o-footer__section">
-
-			<?php if (have_rows('awards', 'options')) : ?>
-
-				<?php $awards = get_field_object('awards', 'options') ?>
-
-				<h5 class="o-footer__section__title"><?= $awards['label'] ?></h5>
-
-				<ul class="o-footer__awards">
-
-					<?php while (have_rows('awards', 'options')) : the_row() ?>
-						<?php $image = get_sub_field('award_image'); ?>
-
-						<li class="o-footer__awards__item">
-							<img src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>" class="o-footer__awards__item__image">
-						</li>
-
-					<?php endwhile; ?>
-
-				</ul>
-
-			<?php endif; ?>
-
-		</div>
-
-		<div class="o-footer__section o-footer__section--links">
-			<h5 class="o-footer__section__title"><?= $data->menu_links['label'] ?></h5>
-			<ul class="o-footer__links">
-				<?php foreach ($data->menu_links['items'] as $menu) : ?>
-					<li class="o-footer__links__item">
-						<a href="<?= $menu->url ?>" title="<?= $menu->title ?>"
-						   class="o-footer__links__item__link"><?= $menu->title ?></a>
-					</li>
-				<?php endforeach; ?>
-			</ul>
-
-		</div>
-
-		<div class="o-footer__section o-footer__section--imprint">
-			<div class="o-footer__section--imprint-inner">
-				<h5 class="o-footer__section__title">Imprint</h5>
-				<address class="o-footer__address">
-					<?= $data->address ?>
-				</address>
-			</div>
-		</div>
-
-		<div class="o-footer__section">
-			<a class="o-footer__brand__image__link" href="<?= $data->brand_link ?>" title="Swisscom AG" target="_blank">
-				<img class="o-footer__brand__image" src="<?= $data->brand_image ?>" alt="Swisscom Brand Logo">
+			<a href="mailto:<?= $data->email ?>" class="o-footer__mail">
+				<i class="icon-ios-email-outline"></i>
+				<?= $data->email ?>
 			</a>
 		</div>
 	</div>
 
 </div>
+
+<a class="o-footer__disclaimer" href="/disclaimer">Disclaimer</a>

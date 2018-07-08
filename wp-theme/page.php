@@ -1,4 +1,5 @@
 <?
+
 /**
  * The Template for displaying all pages.
  *
@@ -10,39 +11,38 @@ get_header();
 
 <? while (have_posts()) : the_post(); ?>
 
-	<?php if (have_rows('flexible_content_sub')): ?>
+	<?php if (have_rows('landingpage')): ?>
 
 
-		<?php while (have_rows('flexible_content_sub')): the_row(); ?>
+		<?php while (have_rows('landingpage')): the_row(); ?>
 
 			<!--STAGE-->
 
-			<?php if (get_row_layout() === 'stage_subpage') : ?>
+			<?php if (get_row_layout() === 'stage') : ?>
 
 				<?=
 				module('stage')
 					->tag('section')
-					->classes('o-stage--small')
 					->ctrl(); ?>
 
 			<?php endif; ?>
 
-			<!--INFO-->
+			<!--FORM-->
 
-			<?php if (get_row_layout() === 'subline_subpage') : ?>
+			<?php if (get_row_layout() === 'form') : ?>
 
 				<?=
-				module('info')
+				module('form')
 					->tag('section')
-					->classes('o-info--small')
-					->ctrl(); ?>
+					->ctrl()
+					->attrib('id', 'ebook'); ?>
 
 
 			<?php endif; ?>
 
 			<!--CONTENT-->
 
-			<?php if (get_row_layout() === 'content_subpage') : ?>
+			<?php if (get_row_layout() === 'content') : ?>
 
 				<?=
 				module('content')
@@ -52,63 +52,17 @@ get_header();
 
 			<?php endif; ?>
 
-			<!--SEPARATOR-->
+			<!--BLOG TEASER-->
 
-			<?php if (get_row_layout() === 'separator_subpage') : ?>
+			<?php if (get_row_layout() === 'blog_teaser') : ?>
 
-				<?=
-				module('separator')
+				<?
+
+				$numberofposts['count'] = 3;
+
+				echo module('teaserlist')
 					->tag('section')
-					->ctrl(); ?>
-
-
-			<?php endif; ?>
-
-			<!--DOWNLOADS-->
-
-			<?php if (get_row_layout() === 'download_list_subpage') : ?>
-
-				<?=
-				module('downloads')
-					->tag('section')
-					->ctrl(); ?>
-
-
-			<?php endif; ?>
-
-			<!--VIDEO-->
-
-			<?php if (get_row_layout() === 'videos_list_subpage') : ?>
-
-				<?=
-				module('videos')
-					->tag('section')
-					->ctrl(); ?>
-
-
-			<?php endif; ?>
-
-			<!--ACCORDION-->
-
-			<?php if (get_row_layout() === 'accordion_subpage') : ?>
-
-				<?=
-				module('accordion')
-					->tag('section')
-					->ctrl(); ?>
-
-
-			<?php endif; ?>
-
-			<!--IMAGE LIST-->
-
-			<?php if (get_row_layout() === 'image_list') : ?>
-
-				<?=
-				module('imagelist')
-					->tag('section')
-					->ctrl(); ?>
-
+					->ctrl($numberofposts); ?>
 
 			<?php endif; ?>
 

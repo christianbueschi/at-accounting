@@ -40,29 +40,11 @@ class StageCtrl {
 
 		// Set default vars for the view
 		$viewData = self::$DEFAULT_VIEW_VARS;
+		$logo = get_sub_field('stage_logo');
 
-		// View Data
-		$viewData['post_id'] = get_the_ID();
-		$viewData['title'] = ($ctrlArgs && $ctrlArgs['Title'] ? $ctrlArgs['Title'] : get_the_title(get_the_ID()));
-		$viewData['tagline'] = get_sub_field('stage_landing_tagline');
-		$viewData['cta'] = get_sub_field('stage_landing_cta');
-		$viewData['cta_link'] = get_sub_field('stage_landing_cta_link');
-
-		$backgroundImageLanding = get_sub_field('stage_landing_background_image');
-		$backgroundImageSub = get_sub_field('stage_sub_background_image');
-
-
-		if($backgroundImageLanding) {
-			$viewData['background_image'] = $backgroundImageLanding['url'];
-		} else if($backgroundImageSub) {
-			$viewData['background_image'] = $backgroundImageSub['url'];
-		} else if($ctrlArgs && $ctrlArgs['BackgroundImage']) {
-			$viewData['background_image'] = $ctrlArgs['BackgroundImage'];
-		}
-
-		$viewData['background_color'] = get_sub_field('stage_sub_background_color');
-
-		$viewData['product_image'] = get_sub_field('stage_landing_product_image');
+		$viewData['logo'] = $logo['url'];
+		$viewData['logoAlt'] = $logo['alt'];
+		$viewData['text'] = get_sub_field('stage_text');
 
 		return $viewData;
 	}

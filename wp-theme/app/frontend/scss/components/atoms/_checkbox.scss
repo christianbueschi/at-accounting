@@ -12,7 +12,7 @@
 			border-radius: 5px;
 			width: 22px;
 			height: 22px;
-			border: 2px solid $grey-20;
+			border: 2px solid $dark;
 			
 			.o-footer__newsletter & {
 				border-color: white;
@@ -24,7 +24,7 @@
 		
 		&:before {
 			border-radius: 5px;
-			border-color: $sc-blue;
+			border-color: $blue;
 		}
 		
 		&:after {
@@ -34,7 +34,7 @@
 			width: 20px;
 			height: 20px;
 			font-family: $icon-font-family;
-			color: $sc-blue;
+			color: $blue;
 			font-weight: 600;
 			
 			/* Better Font Rendering =========== */

@@ -15,21 +15,13 @@ get_header(); ?>
 
 <?php
 
-$title = get_the_title(get_option('page_for_posts', true));
-$backgroundImageBlog = get_the_post_thumbnail_url(get_option('page_for_posts', true));
-
 ?>
 
+<?
 
-<?=
-module('stage')
-	->tag('section')
-	->classes('o-stage--small')
-	->ctrl(array('Title' => $title, 'BackgroundImage' => $backgroundImageBlog)) ?>
+$numberofposts['count'] = -1;
 
-
-<?=
-module('teaserlist')
-	->ctrl(); ?>
+echo module('teaserlist')
+	->ctrl($numberofposts); ?>
 
 <? get_footer(); ?>

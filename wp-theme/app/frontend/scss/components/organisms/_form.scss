@@ -1,48 +1,128 @@
 .o-form {
-	margin: 0 auto;
 	
-	input[type="text"],
-	input[type="email"] {
-		@extend .a-input;
+	&__inner {
+		padding: $spacing * 2;
+		@include outer-container($max-width--small);
+		
+		@include media($medium-up) {
+			padding: $spacing * 4;
+		}
 	}
 	
-	input[type="button"] {
-		@extend .a-button;
-	}
-	
-	label {
-		@extend .a-label;
-	}
-	
-	textarea {
-		@extend .a-textarea;
-	}
-	
-	select {
-		@extend .a-select;
-	}
-	
-	// Overwrite Ninja Form Styles
-	
-	.nf-field-container {
+	&__title {
+		@include type-setting(-1);
+		font-weight: 300;
+		color: $blue;
+		text-align: center;
 		margin-bottom: $spacing * 2;
+		
+		@include media($medium) {
+			@include type-setting(0);
+			margin-bottom: $spacing * 4;
+		}
+		
+		@include media($large-up) {
+			@include type-setting(1);
+			margin-bottom: $spacing * 6;
+		}
 	}
 	
-	.nf-form-fields-required {
-		display: none;
-	}
-	
-	.nf-error-wrap,
-	.nf-error-msg {
-		@include type-setting(-2);
-		color: $sc-red;
+	&__content {
+		
+		label {
+			@include type-setting(-2);
+			font-weight: 300;
+		}
+		
+		.nf-field-label {
+			margin-bottom: 0 !important;
+			
+			@include media($medium-up) {
+				@include span-columns(3);
+			}
+		}
+		
+		.label-above .nf-field-element {
+			@include media($medium-up) {
+				@include span-columns(9);
+			}
+		}
+		
+		.nf-field-container {
+			margin-bottom: 0;
+		}
+		
+		input[type="text"],
+		input[type="email"],
+		select,
+		textarea {
+			padding: $spacing;
+			border-radius: 8px;
+			border: 1px solid $blue;
+			-webkit-appearance: none;
+			@include type-setting(-2);
+			font-family: $font-family;
+			width: 100%;
+			background-color: transparent;
+			
+			@include media($large-up) {
+			
+			}
+			
+			&:focus {
+				outline: none;
+				border-color: $orange;
+			}
+		}
+		
+		input[type="text"],
+		input[type="email"],
+		select {
+			height: 48px !important;
+			display: block;
+		}
+		
+		input[type="button"] {
+			@extend .a-btn;
+			width: 100% !important;
+			margin-top: $spacing * 2;
+			
+			@include media($medium-up) {
+				@include shift(4);
+			}
+		}
+		
+		textarea {
+			display: block;
+		}
+		
 	}
 	
 	.nf-response-msg {
-		color: $green-interaction;
+		@include type-setting(-2);
 		
-		> p {
-			margin-bottom: 0;
+		@include media($medium-up) {
+			@include type-setting(-1);
+		}
+	}
+	
+	.nf-form-fields-required {
+		@include type-setting(-2);
+		font-weight: 300;
+		
+		@include media($medium-up) {
+			@include shift(3);
+			margin-bottom: $spacing * 2;
+		}
+	}
+	
+	.nf-error-msg {
+		@include type-setting(-2);
+		font-weight: 300;
+		
+		@include media($medium-up) {
+			@include shift(3);
+			margin-bottom: $spacing * 2;
 		}
 	}
 }

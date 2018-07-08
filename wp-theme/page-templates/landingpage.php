@@ -10,14 +10,14 @@ get_header();
 
 <? while (have_posts()) : the_post(); ?>
 
-	<?php if (have_rows('flexible_content')): ?>
+	<?php if (have_rows('landingpage_flexible_content')): ?>
 
 
-		<?php while (have_rows('flexible_content')): the_row(); ?>
+		<?php while (have_rows('landingpage_flexible_content')): the_row(); ?>
 
 			<!--STAGE-->
 
-			<?php if (get_row_layout() === 'stage_landingpage') : ?>
+			<?php if (get_row_layout() === 'stage') : ?>
 
 				<?=
 				module('stage')
@@ -26,74 +26,56 @@ get_header();
 
 			<?php endif; ?>
 
-			<!--INFO-->
+			<!--FORM-->
 
-			<?php if (get_row_layout() === 'info') : ?>
+			<?php if (get_row_layout() === 'form') : ?>
 
 				<?=
-				module('info')
+				module('form')
+					->tag('section')
+					->ctrl()
+					->attrib('id', 'ebook'); ?>
+
+
+			<?php endif; ?>
+
+			<!--CONTENT-->
+
+			<?php if (get_row_layout() === 'content') : ?>
+
+				<?=
+				module('content')
 					->tag('section')
 					->ctrl(); ?>
 
 
 			<?php endif; ?>
 
-			<!--TOP FEATURES-->
+			<!--ABOUT-->
 
-			<?php if (get_row_layout() === 'top_features') : ?>
-
-				<?=
-				module('topfeaturelist')
-					->tag('ul')
-					->ctrl(); ?>
-
-
-			<?php endif; ?>
-
-			<!--FEATURES-->
-
-			<?php if (get_row_layout() === 'features') : ?>
+			<?php if (get_row_layout() === 'about') : ?>
 
 				<?=
-				module('featurelist')
-					->tag('ul')
-					->ctrl(); ?>
-
-			<?php endif; ?>
-
-			<!--PLATFORM-->
-
-			<?php if (get_row_layout() === 'platform') : ?>
-
-				<?=
-				module('platform')
+				module('about')
 					->tag('section')
 					->ctrl(); ?>
 
+
 			<?php endif; ?>
 
-			<!--LICENCSE CALCULTAOR-->
+			<!--BLOG TEASER-->
 
-			<?php if (get_row_layout() === 'license_calculator') : ?>
+			<?php if (get_row_layout() === 'blog_teaser') : ?>
 
-				<?=
-				module('calculator')
+				<?
+
+				$numberofposts['count'] = 3;
+
+				echo module('teaserlist')
 					->tag('section')
-					->ctrl(); ?>
+					->ctrl($numberofposts); ?>
 
 			<?php endif; ?>
-
-			<!--TEAM-->
-
-			<?php if (get_row_layout() === 'team') : ?>
-
-				<?=
-				module('team')
-					->tag('section')
-					->ctrl(); ?>
-
-			<?php endif; ?>
-
 
 
 		<?php endwhile; ?>

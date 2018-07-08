@@ -33,7 +33,7 @@ Join Project
   * Setup MySQL Database, Import Database
   * Create entry in hosts file and create a Virtual Host
   * Copy the wp-config.php and .htaccess files from the /config folder
-  * Symlink the wp-theme folder (ln -s ../../../wp-theme sharespace)
+  * Symlink the wp-theme folder (ln -s ../../../wp-theme at-accountin)
   
 
 * Add Virtual Host: Add IPv4 Entry (OSX: sudo vim /etc/hosts)

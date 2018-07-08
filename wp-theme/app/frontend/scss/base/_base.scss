@@ -1,9 +1,14 @@
 body, html {
 	font-family: $font-family;
-	color: $sc-mid-grey;
+	color: $dark;
 	overflow-x: hidden;
 }
 
 img {
 	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: $dark;
 }

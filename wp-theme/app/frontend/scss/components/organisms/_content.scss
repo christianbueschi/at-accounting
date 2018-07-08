@@ -1,29 +1,116 @@
 .o-content {
-	@include background-light();
-	@extend .richtext;
+	border-bottom: 1px solid $orange;
 	
 	&__inner {
-		@extend .l-container;
-	}
-	
-	&__one {
-		@extend .l-container--ultranarrow;
-	}
-	
-	&__left {
+		padding: $spacing * 2;
+		
 		@include media($medium-up) {
-			@include span-columns(6);
+			padding: $spacing * 4;
+			@include outer-container($max-width--small);
+		}
+		
+		@include media($large-up) {
+			padding: $spacing * 8;
 		}
 	}
 	
-	&__right {
-		@include media($medium-up) {
-			@include span-columns(6);
+	&__title {
+		@include type-setting(-1);
+		font-weight: 200;
+		color: $blue;
+		text-align: center;
+		margin-bottom: $spacing * 2;
+		
+		@include media($medium) {
+			@include type-setting(0);
+			margin-bottom: $spacing * 4;
+		}
+		
+		@include media($large-up) {
+			@include type-setting(1);
+			margin-bottom: $spacing * 8;
+		}
+		
+		i {
+			position: relative;
+			top: 2px;
 		}
 	}
 	
-	[data-fancybox]:focus {
-		outline: none;
+	&__copy {
+		@include type-setting(-2);
+		font-weight: 300;
+		margin-bottom: $spacing * 2;
+		@include row();
+		
+		@include media($large-up) {
+			@include type-setting(-1);
+			margin-bottom: $spacing * 6;
+		}
+		
+		&__left {
+			
+			@include media($large-up) {
+				@include span-columns(7);
+			}
+			
+			&--only {
+				@include span-columns(12);
+			}
+		}
+		
+		&__right {
+			
+			@include media($large-up) {
+				@include span-columns(5);
+			}
+		}
+		
+		a {
+			color: $orange;
+			
+			&:hover {
+				color: $blue;
+			}
+		}
+		
+		p {
+			margin-bottom: $spacing * 2;
+		}
+		
+		ul {
+			margin-left: $spacing;
+		}
+		
+		li {
+			list-style: disc;
+			margin-left: $spacing * 2;
+			font-weight: 400;
+			margin-bottom: $spacing / 2;
+			
+			ul {
+				
+				li {
+					list-style: circle;
+				}
+			}
+		}
 	}
-}
+	
+	&__cta {
+		text-align: center;
+		
+		&__info {
+			@include type-setting(-2);
+			font-weight: 300;
+			margin-bottom: $spacing;
+			
+			@include media($large-up) {
+				@include type-setting(-1);
+				margin-bottom: $spacing * 1;
+			}
+		}
+	}
+	
 
+}

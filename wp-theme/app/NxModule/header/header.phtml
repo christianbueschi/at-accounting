@@ -1,19 +1,9 @@
 <div class="o-header__inner">
-	<a class="o-header__brand a-logo" href="/">Sharespace</a>
-	<ul class="o-header__controls">
-		<li class="o-header__controls__item">
-			<button class="icon icon-search js-search"></button>
-		</li>
-		<li class="o-header__controls__item">
-			<button class="icon icon-menu js-nav"></button>
-		</li>
-	</ul>
 
-	<?=
+	<?= module('nav')
+		->tag('nav')
+		->classes('l-nav')
+		->ctrl() ?>
 
-	module('search')
-		->tag('section')
-		->classes('js-search-body')
-		->ctrl();
-	?>
+
 </div>

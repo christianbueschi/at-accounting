@@ -1,0 +1,27 @@
+<div id="<?= $data->anchor ?>" class="o-about__inner">
+	<h3 class="o-about__title">
+		<?= $data->title ?>
+	</h3>
+
+	<figure class="o-about__figure">
+		<img class="o-about__figure__img" src="<?= $data->image ?>" alt="<?= $data->alt ?>">
+		<figcaption class="o-about__figure__caption"><?= $data->alt ?></figcaption>
+	</figure>
+
+	<div class="o-about__content__row">
+
+		<?php while (have_rows('content')): the_row(); ?>
+
+			<div class="o-about__content">
+
+				<h4 class="o-about__content__title">
+					<?= get_sub_field('title') ?>
+				</h4>
+				<div class="o-about__content__copy">
+					<?= get_sub_field('copy') ?>
+				</div>
+			</div>
+
+		<? endwhile; ?>
+	</div>
+</div>

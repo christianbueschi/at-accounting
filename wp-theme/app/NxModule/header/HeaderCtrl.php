@@ -18,7 +18,7 @@ class HeaderCtrl {
 	 * @var array
 	 */
 	protected static $DEFAULT_VIEW_VARS = array(
-		'menu_lang' => ''
+
 	);
 
 	/**
@@ -34,24 +34,6 @@ class HeaderCtrl {
 		// Set default vars for the view
 		$viewData = self::$DEFAULT_VIEW_VARS;
 
-		// Define menu locations
-		$map_menu_locations = array(
-			'menu_lang' => 'lang'
-		);
-
-		foreach ($map_menu_locations as $menu => $menu_location) {
-
-			$menu_object = \NxTheme\Helpers::getMenuObject($menu_location);
-
-			$viewData[$menu] = false;
-			if(is_wp_error($menu_object) == false && $menu_object !== false) {
-
-					$viewData[$menu] = array(
-					'items' => wp_get_nav_menu_items($menu_object->term_id),
-					'label' => $menu_object->name
-				);
-			}
-		}
 
 		return $viewData;
 	}

@@ -10,37 +10,19 @@ get_header(); ?>
 
 <?php
 
-
-$title = 'Error 404';
-$subline = get_field('error_subline', 'options');
+$title = get_field('error_title', 'options');
 $text = get_field('error_text', 'options');
-$backgroundImageError = get_field('error_background_image', 'options');
-
 
 ?>
-
-
-<?=
-module('stage')
-	->tag('section')
-	->classes('o-stage--small')
-	->ctrl(array('Title' => $title, 'BackgroundImage' => $backgroundImageError['url'])) ?>
-
-
-	<!-- Info Module -->
-	<div class="o-info o-info--small">
-		<div class="o-info__inner">
-			<div class="o-info__copy">
-				<?= $subline ?>
-			</div>
-		</div>
-	</div>
-
 
 	<!-- Content Module -->
 	<div class="o-content">
 		<div class="o-content__inner">
-			<div class="o-content__one">
+
+			<h2 class="o-content__title">
+				<?= $title ?>
+			</h2>
+			<div class="o-content__copy">
 				<?= $text ?>
 			</div>
 		</div>

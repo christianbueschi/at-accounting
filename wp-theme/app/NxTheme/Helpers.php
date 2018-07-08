@@ -71,7 +71,6 @@ class Helpers {
 				echo module('comment')
 						->tag('li')
 						->id('comment-'.get_comment_ID())
-						->classes('g-col g-col-1')
 						->ctrl(array('comment' => $comment));
 			break;
 		endswitch;

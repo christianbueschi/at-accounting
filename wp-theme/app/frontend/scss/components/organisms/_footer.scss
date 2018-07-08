@@ -1,212 +1,93 @@
 .o-footer {
-	
-	&__outer {
-		background-size: cover;
-		position: relative; // image relative
-		
-		&:before {
-			@include background-dark();
-		}
-		
-		@include media($medium-up) {
-			padding: $spacing * 2;
-		}
-	}
+	background-color: $blue;
 	
 	&__inner {
-		@extend .l-container;
-	}
-	
-	&__section {
-		position: relative;
-		overflow: hidden;
-		margin-bottom: $spacing * 3;
-		clear: left;
+		padding: $spacing * 2;
+		@include outer-container();
 		
-		@include media($medium-up) {
-			margin-bottom: $spacing * 5;
+		@include media($medium) {
+			padding: $spacing * 4;
 		}
 		
-		&__title {
-			@include type-setting(0);
-			color: white;
-			margin-bottom: $spacing;
-			
-			@include media($medium-up) {
-				@include type-setting(1);
-			}
-		}
-		
-		&--links {
-			@include media($medium-up) {
-				@include span-columns(6);
-				clear: none;
-			}
-		}
-		
-		&--imprint {
-			@include media($medium-up) {
-				@include span-columns(6);
-				margin-right: 0;
-				clear: none;
-				text-align: right;
-			}
-			
-			&-inner {
-				@include media($medium-up) {
-					display: inline-block;
-					text-align: left;
-				}
-			}
+		@include media($large-up) {
+			padding: $spacing * 6;
+			display: flex;
+			align-items: center;
+			text-align: center;
 		}
 	}
-	
-	&__brand {
-		@include type-setting(0);
-		display: block;
-		text-align: center;
-		margin-bottom: $spacing * 2;
+
+	&__title {
+		@include type-setting(-1);
+		font-weight: 200;
+		color: white;
+		margin-bottom: $spacing;
 		
-		@include media($medium-up) {
-			@include type-setting(1);
-			@include span-columns(6);
-			margin-bottom: $spacing * 4;
-			text-align: left;
-		}
-	}
-	
-	&__socials {
-		display: block;
-		overflow: hidden;
-		text-align: center;
-		
-		@include media($medium-up) {
-			@include span-columns(6);
-			text-align: right;
-		}
-		
-		&__item {
-			display: inline-block;
-			padding-right: $spacing;
-			
-			&__link {
-				display: block;
-				width: 40px;
-				height: 40px;
-				border-radius: 50%;
-				
-				background-size: cover;
-				color: white;
-				
-				&--Facebook {
-					background-image: url('../images/facebook.svg');
-					
-					&:hover {
-						background-image: url('../images/facebook-blue.svg');
-					}
-				}
-				
-				&--Twitter {
-					background-image: url('../images/twitter.svg');
-					
-					&:hover {
-						background-image: url('../images/twitter-blue.svg');
-					}
-				}
-				
-				&--YouTube {
-					background-image: url('../images/youtube.svg');
-					
-					&:hover {
-						background-image: url('../images/youtube-blue.svg');
-					}
-				}
-			}
-		}
-	}
-	
-	&__newsletter {
-		
-		.a-button {
-			@extend .a-button--outline;
-		}
-	}
-	
-	&__awards {
-		
-		&__item {
-			margin-bottom: $spacing;
-			
-			@include media($medium-up) {
-				display: inline-block;
-				max-width: 30%;
-				margin-right: $spacing * 2;
-				vertical-align: middle;
-				
-				&:last-child {
-					margin-right: 0;
-				}
-			}
-			
-			&__image {
-				max-height: 100px;
-			}
-			
-		}
-	}
-	
-	
-	&__links {
-		
-		&__item {
-			
-			&__link {
-				font-family: $font-family-bold;
-				color: white;
-				text-decoration: none;
-				
-				&:hover {
-					text-decoration: underline;
-				}
-			}
+		@include media($large-up) {
+			flex: 4;
 		}
 	}
 	
 	&__address {
+		@include type-setting(-2);
+		font-weight: 200;
 		color: white;
+		margin-bottom: $spacing * 2;
 		
-		> p {
-			margin-bottom: $spacing;
+		@include media($large-up) {
+			flex: 4;
+			margin-bottom: 0;
 			
-			> a {
-				color: white;
-				text-decoration: none;
-				
-				&:hover {
-					text-decoration: underline;
-				}
+			p {
+				text-align: left;
+				display: inline-block;
+				margin: 0 auto;
 			}
 		}
 	}
 	
-	&__brand__image {
-		width: 200px;
-		display: block;
-		margin: 0 auto;
+	&__contact-wrapper {
 		
-		&__link {
-			display: block;
+		@include media($large-up) {
+			flex: 4;
+		}
+		
+		&__inner {
+			text-align: left;
+			display: inline-block;
+			margin: 0 auto;
 		}
 	}
 	
-	// Mailchimp Styles
-	.mc4wp-alert {
-		@include type-setting(-2);
-		margin-top: $spacing;
-		color: $red-interaction;
+	&__tel,
+	&__mail {
+		display: block;
+		@include type-setting(-1);
+		font-weight: 200;
+		color: $orange;
 		
-		&.mc4wp-success {
-			color: $green-interaction;
+		i {
+			font-size: 30px;
+			position: relative;
+			top: 3px;
+			padding-right: $spacing;
+		}
+		
+		&:hover {
+			color: white;
+		}
+	}
+	
+	&__disclaimer {
+		display: block;
+		text-align: center;
+		font-weight: 200;
+		@include type-setting(-2);
+		color: $orange;
+		padding-bottom: $spacing * 2;
+		
+		&:hover {
+			color: white;
 		}
 	}
 }

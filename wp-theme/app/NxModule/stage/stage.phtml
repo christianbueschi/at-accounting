@@ -1,39 +1,31 @@
-<div class="o-stage__outer" style="background-image: url(<?= $data->background_image; ?>); background-color: <?= $data->background_color ?>">
-	<div class="o-stage__inner">
-		<div class="o-stage__title__outer">
-			<h1 class="o-stage__title"><?= $data->title; ?></h1>
-			<?php if (have_rows('stage_landing_subheadings')) : ?>
-				<div class="o-stage__subheading__typed" id="js-subheadings">
-					<?php while (have_rows('stage_landing_subheadings')) : the_row() ?>
+<div class="o-stage__inner">
+	<figure class="o-stage__logo">
+		<img src="<?= $data->logo; ?>" alt="<?= $data->logoAlt; ?>">
+	</figure>
 
-						<h2 class="o-stage__subheading"><?= get_sub_field('stage_landing_subheading') ?></h2>
-
-					<?php endwhile; ?>
-				</div>
-				<div class="o-stage__subheading__outer">
-					<h2 class="o-stage__subheading" id="js-subheading"></h2>
-				</div>
-			<?php endif; ?>
-		</div>
-		<?php if ($data->product_image) : ?>
-			<div class="o-stage__image__outer">
-				<img class="o-stage__image" src="<?= $data->product_image['url']; ?>" alt="<?= $data->product_image['alt']; ?>">
-				<div class="o-stage__cta o-stage__cta--largescreen">
-					<p class="o-stage__cta__tagline"><?= $data->tagline; ?></p>
-					<div class="o-stage__cta__button__outer">
-						<a class="o-stage__cta__button a-button" href="<?= $data->cta_link; ?>"><?= $data->cta; ?></a>
-					</div>
-				</div>
-			</div>
-		<?php endif; ?>
+	<div class="o-stage__intro__outer">
+		<p class="o-stage__intro">
+			<?= $data->text; ?>
+		</p>
 	</div>
-	<?php if ($data->tagline) : ?>
-		<div class="o-stage__cta o-stage__cta--smallscreen">
-			<p class="o-stage__cta__tagline"><?= $data->tagline; ?></p>
-			<div class="o-stage__cta__button__outer">
-				<a class="o-stage__cta__button a-button" href="<?= $data->cta_link; ?>"><?= $data->cta; ?></a>
-			</div>
-		</div>
-	<?php endif; ?>
+
+	<ul class="o-stage__links">
+
+		<?php while (have_rows('stage_button_links')): the_row(); ?>
+
+			<?php
+			$icon = get_sub_field('cta_icon');
+			?>
+
+			<li class="o-stage__item">
+				<a href="#<?= get_sub_field('cta_target') ?>" class="o-stage__link js-link">
+					<i class="o-stage__item__icon icomoon-<?= get_sub_field('cta_icon') ?>"></i>
+					<?= get_sub_field('cta_link_name') ?>
+				</a>
+			</li>
+
+		<? endwhile; ?>
+
+	</ul>
 </div>
 

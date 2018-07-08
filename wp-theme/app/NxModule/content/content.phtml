@@ -1,71 +1,29 @@
-<div class="o-content__inner">
+<div id="<?= $data->anchor ?>" class="o-content__inner js-content">
+	<h2 class="o-content__title">
+		<i class="icomoon-<?= $data->anchor ?>"></i>
+		<?= $data->title ?>
+	</h2>
 
-	<?php if (get_sub_field('cols_subpage') == '2') : ?>
-
-	<div class="o-content__left">
-
-	<?php else : ?>
-
-	<div class="o-content__one">
-
-	<?php endif; ?>
-
-		<?php if (have_rows('content_left_subpage')) : ?>
-
-
-			<?php while (have_rows('content_left_subpage')) : the_row() ?>
-
-				<?php if (get_row_layout() === 'content_text') : ?>
-
-					<p><?= get_sub_field('content_text') ?></p>
-
-				<?php endif; ?>
-
-				<?php if (get_row_layout() === 'content_image') : ?>
-
-					<?php $image = get_sub_field('content_image') ?>
-
-					<figure class="o-content__figure">
-						<img class="o-content__figure__img" src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>">
-						<figcaption class="o-content__figure__caption"><?= $image['caption'] ?></figcaption>
-					</figure>
-
-				<?php endif; ?>
-
-			<?php endwhile; ?>
-
-		<?php endif; ?>
-
-
-	</div>
-
-
-	<?php if (have_rows('content_right_subpage')) : ?>
-
-		<div class="o-content__right">
-
-			<?php while (have_rows('content_right_subpage')) : the_row() ?>
-
-				<?php if (get_row_layout() === 'content_text') : ?>
-
-					<p><?= get_sub_field('content_text') ?></p>
-
-				<?php endif; ?>
-				<?php if (get_row_layout() === 'content_image') : ?>
-
-					<?php $image = get_sub_field('content_image') ?>
-
-					<figure class="o-content__figure">
-						<img class="o-content__figure__img" src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>">
-						<figcaption class="o-content__figure__caption"><?= $image['caption'] ?></figcaption>
-					</figure>
-
-				<?php endif; ?>
-
-			<?php endwhile; ?>
-
+	<div class="o-content__copy">
+		<div class="o-content__copy__left<? if(!$data->copyRight) { echo 'o-content__copy__left--only'; } ?> ">
+			<?= $data->copyLeft ?>
 		</div>
 
-	<?php endif; ?>
+		<div class="o-content__copy__right">
+			<?= $data->copyRight ?>
+		</div>
+	</div>
 
+	<div class="o-content__cta">
+		<p class="o-content__cta__info">
+			<?= $data->buttonInfo ?>
+		</p>
+
+		<?php if($data->buttonTarget) : ?>
+			<a href="#<?= $data->buttonTarget ?>" data-form="<?= $data->formText ?>" class="o-content__cta__btn a-btn js-link js-link-contact">
+				<?= $data->buttonTitle ?>
+			</a>
+		<?php endif; ?>
+
+	</div>
 </div>

@@ -1,60 +1,33 @@
-.a-button {
-	
-	@include type-setting(-2);
-	@include ellipsis(100%);
-	font-family: $font-family;
-	background-color: $blue-interaction;
-	border: none;
-	text-align: center;
-	color: white;
-	min-width: 120px;
-	text-decoration: none;
+.a-btn {
 	display: inline-block;
-	border-radius: 5px;
-	padding: 0 $spacing;
-	
+	@include type-setting(-1);
+	line-height: 2.5rem;
+	font-weight: 200;
+	background-color: $orange;
+	color: white;
+	text-align: center;
+	height: 48px;
+	padding: $spacing;
+	border-radius: 8px;
+	border: none;
+	font-family: $font-family;
+	width: 100%;
+	margin-bottom: $spacing;
 	-webkit-appearance: none;
+	text-decoration: none;
 	
-	line-height: 40px;
+	transition: all .25s ease-in-out;
 	
 	@include media($medium-up) {
-		line-height: 48px;
-		min-width: 160px;
+		max-width: 250px;
+	}
+	
+	&:focus {
+		outline: none;
 	}
 	
 	&:hover {
 		cursor: pointer;
-		outline: none;
-		background-color: $blue-rollover;
+		background-color: $blue;
 	}
-	
-	&--outline {
-		background-color: transparent;
-		border: 1px solid white;
-		
-		&:hover {
-			cursor: pointer;
-			outline: none;
-			border-color: $grey-40;
-			background-color: transparent;
-		}
-	}
-	
-	&:active {
-		transform: scale(.95);
-	}
-
-	
-	.o-separator & {
-		margin-top: $spacing;
-	}
-	
-	// Overwrite Ninja Form Styles
-	
-	.mc4wp-form & {
-		@include media($medium-up) {
-			max-width: 160px;
-		}
-	}
-
 }

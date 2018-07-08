@@ -2,14 +2,14 @@ var FtpDeploy = require('../wp-theme/node_modules/ftp-deploy');
 var ftpDeploy = new FtpDeploy();
 
 var config = {
-    username: "swissco8",
-    password: "SwisscomSharespace$1",
-    host: "s022.cyon.net",
+    username: "ataccou",
+    password: "6wvMcacpF",
+    host: "gusto.metanet.ch",
     port: 21,
     localRoot: "../wp-theme",
-    remoteRoot: "/public_html/test/wp-theme",
+    remoteRoot: "/httpdocs/wp-theme",
     //include: ['_static/build/scripts.min.js', '_static/build/styles.min.css'],
-    exclude: ['**/.DS_Store', 'npm_debug.log', 'node_modules', 'app/frontend', 'NxModule/**/*.js', 'NxModule/**/*.scss', 'package.json']
+    exclude: ['**/.DS_Store', 'npm_debug.log', 'node_modules', 'app/frontend', 'NxModule/**/*.js', 'NxModule/**/*.scss', 'package.json', '.git']
 };
 
 ftpDeploy.deploy(config, function(err) {

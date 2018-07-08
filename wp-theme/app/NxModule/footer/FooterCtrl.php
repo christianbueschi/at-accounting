@@ -36,34 +36,12 @@ class FooterCtrl {
 		// Set default vars for the view
 		$viewData = self::$DEFAULT_VIEW_VARS;
 
-		$viewData['address'] = get_field('imprint_content', 'options');
+		$viewData['title'] = get_field('title', 'options');
+		$viewData['address'] = get_field('address', 'options');
+		$viewData['mobile'] = get_field('mobile', 'options');
+		$viewData['mobilelink'] = get_field('mobilelink', 'options');
+		$viewData['email'] = get_field('email', 'options');
 
-		$backgroundImage = get_field('footer_image', 'options');
-		$viewData['background_image'] = $backgroundImage['url'];
-
-		$brandImage = get_field('brand_image', 'options');
-		$viewData['brand_image'] = $brandImage['url'];
-		$viewData['brand_link'] = get_field('brand_image_link', 'options');
-
-		// Define menu locations
-		$map_menu_locations = array(
-			'menu_links' => 'footer-links',
-			'menu_social' => 'footer-social'
-		);
-
-		foreach ($map_menu_locations as $menu => $menu_location) {
-
-			$menu_object = \NxTheme\Helpers::getMenuObject($menu_location);
-
-			$viewData[$menu] = false;
-			if(is_wp_error($menu_object) == false && $menu_object !== false) {
-
-					$viewData[$menu] = array(
-					'items' => wp_get_nav_menu_items($menu_object->term_id),
-					'label' => $menu_object->name
-				);
-			}
-		}
 
 		return $viewData;
 	}

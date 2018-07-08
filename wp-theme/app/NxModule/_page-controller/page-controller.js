@@ -1,24 +1,25 @@
 (function () {
 
-
     $(document).ready(function () {
 
-        // Create Link Wrapper for FancyBox
+        $('.js-link').on('click', function(ev) {
+            ev.preventDefault();
+            var $el = $(ev.currentTarget);
+            var target = $el.attr('href');
+            var $target = $(target);
 
-        var $images = $('.o-content img');
+            $('html,body').animate(
+                {
+                    scrollTop: $target.offset().top
+                },'slow'
+            );
 
-        $images.each(function (index, image) {
-            var $image = $(image);
-            var href = $image.attr('src');
-            var caption = $image.attr('alt');
-            $image.wrap('<a data-fancybox="group" data-caption="' + caption +'" href="' + href + '">');
-        });
-
-
-        $('[data-fancybox]').fancybox({
-            buttons: [
-                'close'
-            ]
+            if($el.hasClass('js-link-contact')) {
+                var select = $el.closest('.js-content').attr('id');
+                var formText = $el.data('form');
+                $('.js-select').find('select').val(select);
+                $('.js-text').find('textarea').val(formText);
+            }
         });
 
     })

@@ -1,13 +1,8 @@
 <ul class="o-nav__list">
 	<?php foreach ($data->main_nav['items'] as $menu) : ?>
-
 		<li class="o-nav__item">
-			<a href="<?= $menu->url ?>" title="<?= $menu->title ?>" class="o-nav__link"><?= $menu->title ?>
+			<a href="<?= $menu->url ?>" title="<?= $menu->title ?>" class="o-nav__link js-link"><?= $menu->title ?>
 			</a>
 		</li>
 	<?php endforeach; ?>
 </ul>
-
-<a class="o-nav__brand__image__link" href="<?= $data->brand_link ?>" target="_blank">
-	<img class="o-nav__brand__image" src="<?= $data->brand_image ?>" alt="Swisscom Brand Logo">
-</a>

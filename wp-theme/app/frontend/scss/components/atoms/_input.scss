@@ -3,10 +3,10 @@
 	font-family: $font-family;
 	@include type-setting(-2);
 	background-color: white;
-	color: $grey-80;
+	color: $dark;
 	border-radius: 5px;
 	padding: 0 $spacing;
-	border: 1px solid $grey-20;
+	border: 1px solid $dark;
 	width: 100%;
 	
 	-webkit-appearance: none;
@@ -21,7 +21,7 @@
 	
 	&:focus {
 		outline: none;
-		border-color: $sc-blue;
+		border-color: $blue;
 	}
 	
 	&--hidden {

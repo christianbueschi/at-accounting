@@ -19,12 +19,7 @@ class ContentCtrl {
 	 */
 	protected static $DEFAULT_VIEW_VARS = array(
 		'post_id' => '',
-		'title' => '',
-		'subheading' => '',
-		'tagline' => '',
-		'cta' => '',
-		'cta_link' => '',
-		'background_image' => ''
+		'main_nav' => ''
 	);
 
 	/**
@@ -42,7 +37,16 @@ class ContentCtrl {
 		$viewData = self::$DEFAULT_VIEW_VARS;
 
 		// View Data
-		$viewData['post_id'] = get_the_ID();
+		$viewData['title'] = get_sub_field('title');
+		$viewData['anchor'] = get_sub_field('anchor');
+		$viewData['icon'] = get_sub_field('icon');
+		$viewData['copy'] = get_sub_field('content');
+		$viewData['copyLeft'] = get_sub_field('content_left');
+		$viewData['copyRight'] = get_sub_field('content_right');
+		$viewData['buttonInfo'] = get_sub_field('button_info');
+		$viewData['buttonTitle'] = get_sub_field('button_title');
+		$viewData['buttonTarget'] = get_sub_field('button_target');
+		$viewData['formText'] = get_sub_field('form_text');
 
 		return $viewData;
 	}

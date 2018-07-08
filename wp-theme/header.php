@@ -20,41 +20,32 @@
 		<title><?php wp_title('|', true, 'right'); ?></title>
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-		<link rel="icon" type="image/png" sizes="32x32" href="<?=ASSETS_URL?>/images/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="<?=ASSETS_URL?>/images/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="<?=ASSETS_URL?>/images/favicon-16x16.png">
-		<link rel="shortcut icon" type="image/x-icon" href="<?=ASSETS_URL?>/images/favicon.ico"/>
-		<link rel="apple-touch-icon" href="<?=ASSETS_URL?>/images/apple-icon.png"/>
+		<link rel="icon" type="image/png" sizes="32x32" href="<?=ASSETS_URL?>/images/favicon-32x32.png?v2">
+		<link rel="icon" type="image/png" sizes="16x16" href="<?=ASSETS_URL?>/images/favicon-16x16.png?v2">
+		<link rel="shortcut icon" type="image/x-icon" href="<?=ASSETS_URL?>/images/favicon.ico?v2"/>
+		<link rel="apple-touch-icon" href="<?=ASSETS_URL?>/images/apple-icon.png?v2"/>
+		<meta name="theme-color" content="#ffffff">
 
 
 		<?php wp_head(); ?>
 
 		<script>var assetsUrl = '<?=ASSETS_URL?>';</script>
 
-		<!--Fancy Box-->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css" />
-
-		<!-- Open Graph !-->
-		<?= partial('opengraph') ?>
-
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113283964-1"></script>
 		<script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-            ga('create', 'UA-90999533-1', 'auto');
-            ga('send', 'pageview');
+            gtag('config', 'UA-113283964-1');
 		</script>
 
 	</head>
 
-	<body>
+	<body <?php body_class(); ?>>
 
-		<?= module('nav')
-			->tag('nav')
-			->classes('l-nav')
-			->ctrl() ?>
+
 
 		<div class="l-page">
 

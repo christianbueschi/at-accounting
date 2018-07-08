@@ -7,68 +7,28 @@
 
 get_header();
 ?>
-
 <? while (have_posts()) : the_post(); ?>
 
-	<?php if (have_rows('flexible_content_sub')): ?>
-
-		<?php while (have_rows('flexible_content_sub')): the_row(); ?>
-
-			<!--STAGE-->
-
-			<?php if (get_row_layout() === 'stage_subpage') : ?>
-
-				<?=
-				module('stage')
-					->tag('section')
-					->classes('o-stage--small')
-					->ctrl(); ?>
-
-			<?php endif; ?>
-
-		<?php endwhile; ?>
-
-	<?php endif; ?>
-
-
 	<?=
-	module('meta')
-		->tag('section')
+	module('article')
+		->tag('article')
 		->ctrl();
 	?>
 
-	<?php if (have_rows('flexible_content_sub')): ?>
+	<? if($post->comment_status == 'open'): ?>
 
-		<?php while (have_rows('flexible_content_sub')): the_row(); ?>
+		<?=
+		module('commentform')
+			->tag('section')
+			->ctrl() ?>
 
-			<!--INFO-->
+		<?=
+		module('commentlist')
+			->tag('section')
+			->ctrl()
+		?>
 
-			<?php if (get_row_layout() === 'subline_subpage') : ?>
-
-				<?=
-				module('info')
-					->tag('section')
-					->classes('o-info--small')
-					->ctrl(); ?>
-
-
-			<?php endif; ?>
-
-			<!--CONTENT-->
-
-			<?php if (get_row_layout() === 'content_subpage') : ?>
-
-				<?=
-				module('content')
-					->tag('section')
-					->ctrl(); ?>
-
-
-			<?php endif; ?>
-
-		<?php endwhile; ?>
-
-	<?php endif; ?>
+	<? endif; ?>
 
 
 <? endwhile; ?>

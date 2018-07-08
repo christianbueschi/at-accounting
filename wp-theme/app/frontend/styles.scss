@@ -1,3 +1,5 @@
+
+
 // Externals
 @import "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
 @import "../../node_modules/bourbon-neat/app/assets/stylesheets/neat";
@@ -21,39 +23,13 @@
 
 // Atoms
 @import "scss/components/atoms/button";
-@import "scss/components/atoms/checkbox";
-@import "scss/components/atoms/input";
-@import "scss/components/atoms/label";
 @import "scss/components/atoms/link";
-@import "scss/components/atoms/logo";
-@import "scss/components/atoms/select";
-@import "scss/components/atoms/textarea";
-@import "scss/components/atoms/title";
-
 
 // Organisms
-@import "scss/components/organisms/accordion";
-@import "scss/components/organisms/calculator";
+@import "scss/components/organisms/about";
 @import "scss/components/organisms/content";
-@import "scss/components/organisms/downloads";
-@import "scss/components/organisms/feature";
-@import "scss/components/organisms/featurelist";
-@import "scss/components/organisms/footer";
 @import "scss/components/organisms/form";
+@import "scss/components/organisms/footer";
 @import "scss/components/organisms/header";
-@import "scss/components/organisms/imagelist";
-@import "scss/components/organisms/info";
-@import "scss/components/organisms/meta";
 @import "scss/components/organisms/nav";
-@import "scss/components/organisms/newsletter";
-@import "scss/components/organisms/platform";
-@import "scss/components/organisms/search";
-@import "scss/components/organisms/separator";
 @import "scss/components/organisms/stage";
-@import "scss/components/organisms/team";
-@import "scss/components/organisms/teaser";
-@import "scss/components/organisms/teaserlist";
-@import "scss/components/organisms/topfeature";
-@import "scss/components/organisms/videos";
-
-

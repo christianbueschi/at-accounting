@@ -210,11 +210,21 @@ class Filters
 	 * Filter to remove WYSIWYG Editor on Posts and Pages
 	 */
 	public static function init_remove_support(){
-		$post_type = 'post';
-		remove_post_type_support( $post_type, 'editor');
 
 		$post_type = 'page';
 		remove_post_type_support( $post_type, 'editor');
+	}
+
+	public static function wpb_move_comment_field_to_bottom( $fields ) {
+		$comment_field = $fields['comment'];
+		unset( $fields['comment'] );
+		$fields['comment'] = $comment_field;
+		return $fields;
+	}
+
+	public static function allow_svgimg_types($mimes) {
+		$mimes['svg'] = 'image/svg+xml';
+		return $mimes;
 	}
 
 }

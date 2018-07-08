@@ -1,192 +1,110 @@
 .o-stage {
+	background-color: $blue;
+	color: white;
+	padding: $spacing * 2;
+	min-height: 100vh;
 	
-	position: relative;
-	
-	&__outer {
-		background-size: cover;
-		background-position: center center;
-		position: relative; // image relative
-		
-		&:before {
-			@include background-dark();
-		}
-		
-		@include media($medium-up) {
-			text-align: center;
-		}
+	@include media($medium-up) {
+		padding: $spacing * 4;
+		padding-bottom: $spacing * 10;
 	}
 	
 	&__inner {
 		@include outer-container();
 	}
 	
-	&__title {
-		@include type-setting(0);
+	&__logo {
+		text-align: center;
+		padding: $spacing * 6 0;
+		
+		@include media($large-up) {
+			padding: $spacing * 10 0 $spacing * 5 ;
+		}
+	}
+	
+	&__intro {
+		@include type-setting(-1);
+		font-weight: 100;
+		margin-bottom: $spacing * 6;
+		
+		&__outer {
+			max-width: 800px;
+			text-align: center;
+			margin: 0 auto;
+		}
+		
+		@include media($large-up) {
+			@include type-setting(0);
+			margin-bottom: $spacing * 13;
+		}
+	}
+	
+	&__item {
+		border-bottom: 1px solid $orange;
+		padding: $spacing 0;
+		
+		@include media($medium-up) {
+			padding: $spacing;
+		}
+		
+		@include media($large-up) {
+			float: left;
+			width: 33%;
+			border-bottom: none;
+			border-right: 1px solid $orange;
+			text-align: center;
+			
+			&:last-child {
+				border-right: none;
+			}
+		}
+		
+		&__icon {
+			height: 30px;
+			position: relative;
+			padding-right: 5px;
+			
+			@include media($medium-up) {
+				height: 40px;
+			}
+			
+			@include media($large-up) {
+				height: 50px;
+				font-size: 60px;
+				display: block;
+				margin: 0 auto;
+				margin-bottom: $spacing;
+			}
+		}
+	}
+	
+	&__link {
+		@include type-setting(-1);
+		font-weight: 200;
 		color: white;
 		position: relative;
-		padding: $header-height-s $spacing*2 0 $spacing*2;
-		
-		@include media($medium-up) {
-			@include type-setting(1);
-			padding: calc(#{$header-height-s} + #{$spacing}) $spacing*2 0 $spacing*2;
-		}
-		
-		@include media($large-up) {
-			@include type-setting(3);
-			padding: calc(#{$header-height-l} + #{$spacing} * 3) $spacing*2 0 $spacing*2;
-		}
-		
-		&__outer {
-			@include media($medium-up) {
-				display: inline-block;
-			}
-		}
-	}
-	
-	&--small &__title {
-		text-align: center;
-		padding: calc(#{$header-height-s} + #{$spacing} * 2) $spacing*2 $header-height-s $spacing*2;
-		
-		@include media($medium-up) {
-			@include type-setting(1);
-			padding: $header-height-l $spacing*2 $header-height-s $spacing*2;
-		}
-		
-		@include media($large-up) {
-			@include type-setting(3);
-			padding: calc(#{$header-height-l} + #{$spacing} * 4) $spacing*2 $header-height-l $spacing*2;
-		}
-	}
-	
-	.typed-cursor {
-		//display: none !important;
-	}
-	
-	&__subheading {
-		display: inline;
-		@include type-setting(-2);
-		font-family: $font-family-serif;
-		color: $sc-blue;
-		position: relative;
-		
-		@include media($medium-up) {
-			@include type-setting(-1);
-			text-align: left;
-		}
-		
-		&__outer {
-			position: absolute;
-			line-height: 1.8rem;
-			text-align: left;
-			padding: 0 $spacing*2;
-		}
-		
-		&__typed {
-			display: none;
-		}
-	}
-	
-	&__image {
 		display: block;
-		margin: 0 auto;
-		width: 300px;
-		z-index: 1;
-		position: relative;
-		margin-top: 20px;
-		margin-bottom: -45px;
+		transition: $transition;
 		
 		@include media($medium-up) {
-			padding-left: $spacing * 4;
-			margin: 0;
-			width: calc(50%);
+			@include type-setting(0);
 		}
 		
-		&__outer {
-			margin-top: 80px;
-			
-			@include media($medium-up) {
-				margin-top: 0;
-				display: inline-flex;
-				align-items: center;
-				width: 100%;
-				transform: translateY(25%);
-			}
+		&:hover {
+			color: $orange;
 		}
-	}
-	
-	&__cta {
-		overflow: hidden;
-		padding: $spacing*5 $spacing*2 $spacing*2;
-		background-color: $grey;
-		position: relative;
 		
-		@include media($medium-up) {
-			background-color: transparent;
-			position: relative;
-			padding-top: 0;
-			transform: translateY(-10%);
-			bottom: 0;
+		&:after {
+			font-family: $icon-font-family;
+			content: "\f3d3";
+			position: absolute;
 			right: 0;
-			width: 50%;
-		}
-		
-		@include media($large-up) {
-			transform: translateY(-25%);
-		}
-		
-		&--largescreen {
-			display: none;
+			font-weight: 300;
 			
-			@include media($medium-up) {
-				display: block;
-			}
-		}
-		
-		&--smallscreen {
-			display: block;
-			
-			@include media($medium-up) {
+			@include media($large-up) {
 				display: none;
 			}
 		}
-		
-		&__tagline {
-			@include type-setting(-2);
-			color: white;
-			@include span-columns(7);
-			
-			@include media($medium-up) {
-				@include span-columns(12);
-				@include type-setting(-1);
-				margin-bottom: $spacing;
-				text-align: left;
-			}
-		}
-		
-		&__button {
-			
-			@include media($small) {
-				background-color: transparent;
-				border: 1px solid white;
-				
-				&:hover {
-					cursor: pointer;
-					background-color: transparent;
-					outline: none;
-					border-color: $grey-40;
-				}
-			}
-			
-			&__outer {
-				@include span-columns(5);
-				text-align: center;
-				
-				@include media($medium-up) {
-					@include span-columns(12);
-					text-align: left;
-				}
-			}
-		}
-		
 	}
+
 }

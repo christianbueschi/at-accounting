@@ -1,36 +1,49 @@
 .o-nav {
+	position: absolute;
+	width: 100%;
+	color: white;
 	
-	background-color: $horizon;
+	@include media($medium-up) {
+		padding: $spacing;
+	}
 	
 	&__list {
-		margin: $spacing * 3;
+		text-align: center;
 	}
 	
 	&__item {
-		border-bottom: 1px solid $aluminium;
+		display: inline-block;
+		padding-left: $spacing / 2;
+		
+		&:after {
+			content: '|';
+			font-weight: 100;
+			font-size: 20px;
+			padding-left: $spacing / 2;
+		}
+		
+		&:last-child {
+			
+			&:after {
+				display: none;
+			}
+		}
+		
 	}
 	
 	&__link {
 		@include type-setting(-2);
-		display: block;
-		text-decoration: none;
-		color: $sc-navy;
-		padding: $spacing 0;
+		font-weight: 100;
+		color: white;
+		transition: $transition;
+		
+		@include media($medium-up) {
+			@include type-setting(-1);
+		}
 		
 		&:hover {
-			color: $blue-rollover;
+			color: $orange;
 		}
 	}
 	
-	&__brand {
-		
-		&__image {
-			width: 100%;
-			
-			&__link {
-				display: block;
-				margin: $spacing * 3;
-			}
-		}
-	}
 }
